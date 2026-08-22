@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bulletin Collator Monitor</title>
+<title>Collator Monitor</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -94,7 +94,9 @@ body {
   overflow: hidden;
 }
 .card-edge-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-.card-edge-bg.bulletin { background: linear-gradient(180deg, #e6007a 0%, #9d0b4c 100%); }
+.card-edge-bg.relay-polkadot { background: linear-gradient(180deg, #8b5cf6 0%, #6d28d9 100%); }
+.card-edge-bg.relay-kusama  { background: linear-gradient(180deg, #f97316 0%, #ea580c 100%); }
+.card-edge-bg.relay-other   { background: linear-gradient(180deg, #64748b 0%, #475569 100%); }
 .card-edge {
   position: relative; z-index: 1;
   writing-mode: vertical-rl; transform: rotate(180deg);
@@ -111,7 +113,9 @@ body {
 }
 .card.status-offline { border-color: var(--red-d); }
 .card.status-offline .card-body { background: linear-gradient(135deg, #1a1414 0%, #141010 100%); }
-.card.status-offline .card-edge-bg.bulletin { background: linear-gradient(180deg, #bd0f60 0%, #7a093b 100%); }
+.card.status-offline .card-edge-bg.relay-polkadot { background: linear-gradient(180deg, #7c3aed 0%, #5b21b6 100%); }
+.card.status-offline .card-edge-bg.relay-kusama  { background: linear-gradient(180deg, #ea080c 0%, #c2410c 100%); }
+.card.status-offline .card-edge-bg.relay-other   { background: linear-gradient(180deg, #475569 0%, #334155 100%); }
 .card.status-stale { border-color: rgba(251,191,36,0.3); }
 .card.status-error { border-color: rgba(251,191,36,0.25); }
 .card.status-error .card-body { background: #161616; }
@@ -119,7 +123,6 @@ body {
 .card-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .card-label { font-size: 16px; font-weight: 600; color: var(--text); }
 .card-addr { font-family: var(--mono); font-size: 11px; color: var(--text3); word-break: break-all; flex: 1; min-width: 0; }
-.card-addr a { color: var(--text3); text-decoration: underline; text-underline-offset: 2px; text-decoration-color: #444; }
 
 .card-rank { font-family: var(--mono); font-size: 12px; color: var(--text3); flex-shrink: 0; letter-spacing: 0.02em; }
 .card-rank .rank-num { font-size: 16px; font-weight: 700; color: var(--text); }
@@ -144,6 +147,14 @@ body {
 .meta-val.warn      { color: var(--amber); }
 .meta-val.muted     { color: var(--text3); }
 
+.chain-tag {
+  display: inline-block;
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  padding: 2px 8px; border-radius: 3px; letter-spacing: 0.03em;
+  background: rgba(255,255,255,0.05); color: var(--text2);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
 .card-error { margin-top: 8px; font-size: 12px; color: var(--amber); font-family: var(--mono); }
 
 .sparkline { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
@@ -151,6 +162,18 @@ body {
 .sparkline svg { display: block; width: 100%; height: 36px; }
 
 .nodes-section { margin-top: 28px; }
+.chain-block { margin-bottom: 18px; }
+.chain-head {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--mono); font-size: 12px; color: var(--text2);
+  padding: 8px 0 6px;
+}
+.chain-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+.chain-dot.relay-polkadot { background: var(--purple); }
+.chain-dot.relay-kusama  { background: var(--orange); }
+.chain-dot.relay-other   { background: #64748b; }
+.chain-count { color: var(--text3); font-size: 10px; }
+
 .fullset-btn {
   display: block; width: 100%; margin-top: 8px;
   font-family: var(--mono); font-size: 10px; color: var(--text2);
@@ -188,7 +211,6 @@ body {
 .fullset-table td:nth-child(3) { color: var(--text3); font-size: 9px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .fullset-table td:nth-child(4), .fullset-table td:nth-child(5),
 .fullset-table td:nth-child(6), .fullset-table td:nth-child(7) { text-align: right; white-space: nowrap; }
-.fullset-table td:nth-child(7) { color: var(--text2); }
 .fullset-table tr.self td { color: var(--text); font-weight: 500; background: rgba(74,222,128,0.05); }
 .fullset-table tr.stale td { color: var(--text3); font-style: italic; }
 .fullset-table .lag { color: var(--red); }
@@ -228,7 +250,7 @@ body {
 
 <div class="topbar">
   <div class="topbar-left">
-    <div class="logo">BULLETIN<span>/</span>COLLATOR<span>/</span>MONITOR</div>
+    <div class="logo">COLLATOR<span>/</span>MONITOR</div>
     <div class="indicator" id="liveIndicator"></div>
   </div>
   <div class="topbar-right" id="topbarMeta">loading&#8230;</div>
@@ -241,8 +263,8 @@ body {
   <div class="stats" id="statsRow">
     <div class="stat ok" id="statOnlineBox"><div class="stat-label">Online</div><div class="stat-value" id="statOnline">&ndash;</div></div>
     <div class="stat" id="statOfflineBox"><div class="stat-label">Offline</div><div class="stat-value" id="statOffline">&ndash;</div></div>
-    <div class="stat" id="statNodesBox"><div class="stat-label">Nodes on chain</div><div class="stat-value" id="statNodes">&ndash;</div></div>
-    <div class="stat" id="statBestBox"><div class="stat-label">Chain best block</div><div class="stat-value" id="statBest">&ndash;</div></div>
+    <div class="stat" id="statChainsBox"><div class="stat-label">Chains</div><div class="stat-value" id="statChains">&ndash;</div></div>
+    <div class="stat" id="statNodesBox"><div class="stat-label">Nodes seen</div><div class="stat-value" id="statNodes">&ndash;</div></div>
   </div>
 
   <div class="section-label">Watched Collators</div>
@@ -254,7 +276,7 @@ body {
   </div>
 
   <div class="footer">
-    <span>Source <a href="https://telemetry.polkadot.io/#/0x2761c95259d59e55ae3daf756c1413b46e45a5a2987299f8ef8e5d8e4776cbc4" target="_blank">wss://feed.telemetry.polkadot.io</a> &middot; Polkadot Bulletin</span>
+    <span>Source <a href="https://telemetry.polkadot.io/" target="_blank">wss://feed.telemetry.polkadot.io</a> &middot; Polkadot + Kusama ecosystem</span>
     <span><a href="https://github.com/yaronski/bulletin-collator-monitor" target="_blank">Source on GitHub</a> &middot; Updated by GitHub Actions every hour</span>
   </div>
 </div>
@@ -262,7 +284,7 @@ body {
 <script>
 var REFRESH_MS = 5 * 60 * 1000;
 var countdownInterval;
-var expanded = false;
+var expandedChains = {};
 
 function fmt(iso) {
   if (!iso) return '\u2013';
@@ -301,6 +323,17 @@ function fmtBytes(b) {
   if (b >= 1024) return (b / 1024).toFixed(1) + ' KiB';
   return b + ' B';
 }
+function relayOf(chainLabel) {
+  if (/kusama/i.test(chainLabel)) return 'kusama';
+  if (/polkadot/i.test(chainLabel)) return 'polkadot';
+  return 'other';
+}
+function edgeWord(relay) {
+  // vertical card edge label
+  if (relay === 'kusama') return 'kusama';
+  if (relay === 'polkadot') return 'polkadot';
+  return 'chain';
+}
 function setIndicator(state) { document.getElementById('liveIndicator').className = 'indicator ' + state; }
 
 function sparklineHtml(history) {
@@ -324,30 +357,31 @@ function sparklineHtml(history) {
     + '</svg></div>';
 }
 
-function renderStats(nodes, chain) {
+function renderStats(nodes, chains) {
   var v = Object.values(nodes);
   var on = v.filter(function(c) { return c.statusText === 'online'; }).length;
   var off = v.filter(function(c) { return c.statusText === 'offline'; }).length;
   var err = v.filter(function(c) { return c.statusText === 'error' || c.statusText === 'stale'; }).length;
+  var nodesSeen = Object.values(chains).reduce(function(a, c) { return a + (c.nodeCount || 0); }, 0);
   document.getElementById('statOnline').textContent = on;
   document.getElementById('statOffline').textContent = off;
-  document.getElementById('statNodes').textContent = chain ? chain.nodeCount : '\u2013';
-  document.getElementById('statBest').textContent = chain ? (chain.bestBlock != null ? chain.bestBlock.toLocaleString() : '\u2013') : '\u2013';
+  document.getElementById('statChains').textContent = Object.keys(chains).length;
+  document.getElementById('statNodes').textContent = nodesSeen;
   document.getElementById('statOnlineBox').className = 'stat' + (on > 0 ? ' ok' : '');
-  document.getElementById('statOfflineBox').className = 'stat' + (off > 0 ? ' bad' : (err > 0 ? ' bad' : ''));
-  document.getElementById('statNodesBox').className = 'stat';
-  document.getElementById('statBestBox').className = 'stat';
+  document.getElementById('statOfflineBox').className = 'stat' + ((off + err) > 0 ? ' bad' : '');
 }
 
 function renderCards(nodes) {
   var list = document.getElementById('cardList');
   var entries = Object.values(nodes);
   if (!entries.length) {
-    list.innerHTML = '<div class="empty">No nodes in status.json yet.<br>Add a PeerID to config.json and run the GitHub Actions workflow.</div>';
+    list.innerHTML = '<div class="empty">No nodes in status.json yet.<br>Add nodes to config.json / NODES_CONFIG and run the GitHub Actions workflow.</div>';
     return;
   }
   var statusOrder = { offline:0, stale:1, error:2, online:3 };
   entries.sort(function(a,b) {
+    var ca = String(a.chain || ''), cb = String(b.chain || '');
+    if (ca !== cb) return ca.localeCompare(cb);
     var sa = statusOrder.hasOwnProperty(a.statusText) ? statusOrder[a.statusText] : 9;
     var sb = statusOrder.hasOwnProperty(b.statusText) ? statusOrder[b.statusText] : 9;
     return sa - sb;
@@ -356,6 +390,7 @@ function renderCards(nodes) {
   list.innerHTML = entries.map(function(col) {
     var st = col.statusText || 'error';
     var label = col.label || col.name || 'node';
+    var relay = relayOf(col.chain);
     var consec = col.consecutiveOffline > 0
       ? '<div class="meta-item"><div class="meta-key">Consec. offline</div><div class="meta-val highlight">' + col.consecutiveOffline + '</div></div>'
       : '';
@@ -373,12 +408,13 @@ function renderCards(nodes) {
       : '';
     var peersCls = col.peers != null && col.peers < 5 ? 'warn' : '';
 
-    return '<div class="card status-' + st + ' network-bulletin">'
-      + '<div class="card-edge-wrap"><div class="card-edge-bg bulletin"></div><div class="card-edge bulletin">bulletin</div></div>'
+    return '<div class="card status-' + st + ' relay-' + relay + '">'
+      + '<div class="card-edge-wrap"><div class="card-edge-bg relay-' + relay + '"></div><div class="card-edge">' + edgeWord(relay) + '</div></div>'
       + '<div class="card-body">'
       + '<div class="card-row">'
-      + '<div class="card-label">' + label + '</div>'
-      + '<div class="card-addr">' + col.peerId + '</div>'
+      + '<div class="card-label">' + escapeHtml(label) + '</div>'
+      + '<span class="chain-tag">' + escapeHtml(col.chain || '') + '</span>'
+      + '<div class="card-addr">' + escapeHtml(col.peerId || col.name || '') + '</div>'
       + '<span class="status-badge ' + st + '">' + statusLabel(st) + '</span>'
       + '</div>'
       + '<div class="card-meta">'
@@ -386,65 +422,76 @@ function renderCards(nodes) {
       + '<div class="meta-item"><div class="meta-key">Finalized</div><div class="meta-val">' + (col.finalized != null ? col.finalized.toLocaleString() : '\u2013') + '</div></div>'
       + '<div class="meta-item"><div class="meta-key">Peers</div><div class="meta-val ' + peersCls + '">' + (col.peers != null ? col.peers : '\u2013') + '</div></div>'
       + ttpb + upload + download + stateSize
-      + '<div class="meta-item"><div class="meta-key">Version</div><div class="meta-val">' + (col.version || '\u2013') + '</div></div>'
+      + '<div class="meta-item"><div class="meta-key">Version</div><div class="meta-val">' + escapeHtml(col.version || '\u2013') + '</div></div>'
       + '<div class="meta-item"><div class="meta-key">Uptime</div><div class="meta-val">' + uptimeFrom(col.startupTime) + '</div></div>'
       + consec
       + '</div>'
       + sparklineHtml(col.history)
-      + (col.lastError ? '<div class="card-error">\u2717 ' + col.lastError + '</div>' : '')
+      + (col.lastError ? '<div class="card-error">\u2717 ' + escapeHtml(col.lastError) + '</div>' : '')
       + '</div>'
       + '</div>';
   }).join('');
 }
 
-function renderNodesTable(nodesTable, watched) {
+function renderNodesTable(chains, watched) {
   var wrap = document.getElementById('nodesTableWrap');
-  if (!nodesTable || !nodesTable.length) {
-    wrap.innerHTML = '<div class="empty">No telemetry nodes in status.json yet.</div>';
+  var chainNames = Object.keys(chains);
+  if (!chainNames.length) {
+    wrap.innerHTML = '<div class="empty">No telemetry chains in status.json yet.</div>';
     return;
   }
-  var best = nodesTable[0].best || 0;
-  var watchedPeerIds = {};
-  Object.values(watched).forEach(function(n) { watchedPeerIds[n.peerId] = n.label || n.name || 'watched'; });
+  var watchedIds = {};
+  Object.values(watched).forEach(function(n) { if (n.peerId) watchedIds[n.peerId] = true; });
 
-  var rows = nodesTable.map(function(n) {
-    var lag = best - (n.best || 0);
-    var lagCell = lag <= 1 ? '<span class="ok">' + lag + '</span>' : '<span class="lag">-' + lag.toLocaleString() + '</span>';
-    var isWatched = watchedPeerIds[n.peerId] !== undefined;
-    return '<tr class="' + (isWatched ? 'self' : '') + (n.stale ? ' stale' : '') + '">'
-      + '<td>' + (isWatched ? '\u2605' : '') + '</td>'
-      + '<td>' + escapeHtml(n.name || '\u2013') + (n.stale ? ' (stale)' : '') + '</td>'
-      + '<td title="' + escapeHtml(n.peerId || '') + '">' + escapeHtml(shortPeer(n.peerId)) + '</td>'
-      + '<td>' + (n.best != null ? n.best.toLocaleString() : '\u2013') + '</td>'
-      + '<td>' + (n.finalized != null ? n.finalized.toLocaleString() : '\u2013') + '</td>'
-      + '<td>' + (n.peers != null ? n.peers : '\u2013') + '</td>'
-      + '<td>' + lagCell + '</td>'
-      + '</tr>';
+  wrap.innerHTML = chainNames.map(function(label) {
+    var c = chains[label];
+    var relay = c.relay || relayOf(label);
+    var key = 'chain-' + label.replace(/[^a-z0-9]/gi, '');
+    var isExp = !!expandedChains[key];
+    var t = c.nodesTable || [];
+    var best = t.length ? t[0].best || 0 : 0;
+
+    var rows = t.map(function(n) {
+      var lag = best - (n.best || 0);
+      var lagCell = lag <= 1 ? '<span class="ok">' + lag + '</span>' : '<span class="lag">-' + lag.toLocaleString() + '</span>';
+      var isWatched = watchedIds[n.peerId];
+      return '<tr class="' + (isWatched ? 'self' : '') + (n.stale ? ' stale' : '') + '">'
+        + '<td>' + (isWatched ? '\u2605' : '') + '</td>'
+        + '<td>' + escapeHtml(n.name || '\u2013') + (n.stale ? ' (stale)' : '') + '</td>'
+        + '<td title="' + escapeHtml(n.peerId || '') + '">' + escapeHtml(shortPeer(n.peerId)) + '</td>'
+        + '<td>' + (n.best != null ? n.best.toLocaleString() : '\u2013') + '</td>'
+        + '<td>' + (n.finalized != null ? n.finalized.toLocaleString() : '\u2013') + '</td>'
+        + '<td>' + (n.peers != null ? n.peers : '\u2013') + '</td>'
+        + '<td>' + lagCell + '</td>'
+        + '</tr>';
+    }).join('');
+
+    return '<div class="chain-block">'
+      + '<div class="chain-head">'
+      + '<span class="chain-dot relay-' + relay + '"></span>'
+      + escapeHtml(label)
+      + '<span class="chain-count">' + t.length + ' nodes · best ' + (c.bestBlock != null ? c.bestBlock.toLocaleString() : '\u2013') + (c.feedOk === false ? ' · FEED ERROR' : '') + '</span>'
+      + '</div>'
+      + '<div class="fullset-wrap" style="display:' + (isExp ? 'block' : 'none') + '" id="' + key + '">'
+      + '<table class="fullset-table">'
+      + '<thead><tr><th></th><th style="text-align:left">Node</th><th style="text-align:left">PeerID</th><th>Best</th><th>Finalized</th><th>Peers</th><th>Lag</th></tr></thead>'
+      + '<tbody>' + rows + '</tbody></table></div>'
+      + '<button class="fullset-btn" onclick="toggleChain(\'' + key + '\', this, ' + t.length + ')">'
+      + (isExp ? '\u25BE Hide' : '\u25B8 Show all ' + t.length + ' nodes')
+      + '</button>'
+      + '</div>';
   }).join('');
-
-  var table = '<table class="fullset-table">'
-    + '<thead><tr><th></th><th style="text-align:left">Node</th><th style="text-align:left">PeerID</th><th>Best</th><th>Finalized</th><th>Peers</th><th>Lag</th></tr></thead>'
-    + '<tbody>' + rows + '</tbody></table>';
-
-  var btn = '<button class="fullset-btn" id="nodesBtn" onclick="toggleNodes()">'
-    + (expanded ? '\u25BE Hide all ' + nodesTable.length + ' nodes' : '\u25B8 Show all ' + nodesTable.length + ' nodes on telemetry')
-    + '</button>';
-
-  var box = '<div class="fullset-wrap" id="nodesWrap" style="display:' + (expanded ? 'block' : 'none') + '">' + table + '</div>';
-
-  wrap.innerHTML = btn + box;
 }
 
-function toggleNodes() {
-  expanded = !expanded;
-  var wrap = document.getElementById('nodesWrap');
-  var btn = document.getElementById('nodesBtn');
-  if (expanded) {
+function toggleChain(key, btn, total) {
+  expandedChains[key] = !expandedChains[key];
+  var wrap = document.getElementById(key);
+  if (expandedChains[key]) {
     wrap.style.display = 'block';
-    btn.innerHTML = btn.innerHTML.replace('\u25B8 Show all', '\u25BE Hide all');
+    btn.innerHTML = '\u25BE Hide';
   } else {
     wrap.style.display = 'none';
-    btn.innerHTML = btn.innerHTML.replace('\u25BE Hide all', '\u25B8 Show all');
+    btn.innerHTML = '\u25B8 Show all ' + total + ' nodes';
   }
 }
 
@@ -460,7 +507,7 @@ function renderAlert(nodes, feed) {
     return;
   }
   if (!offline.length) { banner.classList.remove('show'); return; }
-  var names = offline.map(function(c) { return '<strong>' + (c.label || c.peerId) + '</strong>'; }).join(', ');
+  var names = offline.map(function(c) { return '<strong>' + escapeHtml(c.label || c.peerId) + '</strong> (' + escapeHtml(c.chain || '') + ')'; }).join(', ');
   banner.innerHTML = '\u26A0 ' + offline.length + ' node' + (offline.length > 1 ? 's are' : ' is') + ' OFFLINE: ' + names;
   banner.classList.add('show');
 }
@@ -471,12 +518,13 @@ async function load() {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     var data = await res.json();
     var nodes = data.nodes || {};
+    var chains = data.chains || {};
     setIndicator(data.feed && data.feed.error ? 'error' : 'live');
     document.getElementById('topbarMeta').innerHTML =
       'Updated ' + ago(data.lastUpdated) + '<br>' + fmt(data.lastUpdated);
-    renderStats(nodes, data.chain);
+    renderStats(nodes, chains);
     renderCards(nodes);
-    renderNodesTable(data.nodesTable, nodes);
+    renderNodesTable(chains, nodes);
     renderAlert(nodes, data.feed);
   } catch (err) {
     setIndicator('error');
