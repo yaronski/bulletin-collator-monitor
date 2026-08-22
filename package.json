@@ -1,0 +1,11 @@
+{
+  "name": "bulletin-collator-monitor",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Bulletin (Polkadot) collator telemetry monitor",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "dev": "npx serve . -p 3000"
+  }
+}
