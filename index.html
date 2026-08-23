@@ -277,7 +277,7 @@ body {
 
   <div class="footer">
     <span>Source <a href="https://telemetry.polkadot.io/" target="_blank">wss://feed.telemetry.polkadot.io</a> &middot; Polkadot + Kusama ecosystem</span>
-    <span><a href="https://github.com/yaronski/bulletin-collator-monitor" target="_blank">Source on GitHub</a> &middot; Updated by GitHub Actions every hour</span>
+    <span><a href="https://github.com/yaronski/bulletin-collator-monitor" target="_blank">Source on GitHub</a> &middot; Updated by GitHub Actions every 2 hours</span>
   </div>
 </div>
 
@@ -328,11 +328,12 @@ function relayOf(chainLabel) {
   if (/polkadot/i.test(chainLabel)) return 'polkadot';
   return 'other';
 }
-function edgeWord(relay) {
-  // vertical card edge label
-  if (relay === 'kusama') return 'kusama';
-  if (relay === 'polkadot') return 'polkadot';
-  return 'chain';
+function edgeWord(chainLabel) {
+  // chain-specific vertical edge label, relay prefix stripped:
+  // "Polkadot Bulletin" -> "bulletin", "Kusama People" -> "people", "Polkadot" -> "polkadot"
+  var l = String(chainLabel || '').trim();
+  var w = l.replace(/^polkadot\s+/i, '').replace(/^kusama\s+/i, '');
+  return (w || l || 'chain').toLowerCase();
 }
 function setIndicator(state) { document.getElementById('liveIndicator').className = 'indicator ' + state; }
 
@@ -409,7 +410,7 @@ function renderCards(nodes) {
     var peersCls = col.peers != null && col.peers < 5 ? 'warn' : '';
 
     return '<div class="card status-' + st + ' relay-' + relay + '">'
-      + '<div class="card-edge-wrap"><div class="card-edge-bg relay-' + relay + '"></div><div class="card-edge">' + edgeWord(relay) + '</div></div>'
+      + '<div class="card-edge-wrap"><div class="card-edge-bg relay-' + relay + '"></div><div class="card-edge">' + edgeWord(col.chain) + '</div></div>'
       + '<div class="card-body">'
       + '<div class="card-row">'
       + '<div class="card-label">' + escapeHtml(label) + '</div>'
