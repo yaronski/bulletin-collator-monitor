@@ -17,7 +17,7 @@ GitHub Actions (every 2 hours)
        ├─ resolves each configured chain by label (exact or unique substring)
        ├─ opens one parallel listen session per chain (5 min)
        ├─ matches nodes by PeerID or display name
-       ├─ detects offline transitions (2 consecutive checks default)
+       ├─ detects offline transitions (alerts on first missed check by default)
        ├─ sends  Telegram alert on transition
        └─ writes status.json              (PeerIDs truncated, committed to repo)
 
@@ -31,7 +31,7 @@ A node counts as **offline** only if it does not appear in its chain's feed at t
 |--------|---------|
 | `online` | Present in the telemetry feed with fresh blocks |
 | `stale` | Present but flagged stale (no fresh telemetry for ~2 min) |
-| `offline` | Not in the feed — alerts after 2 consecutive checks |
+| `offline` | Not in the feed — alerts on the first missed check |
 | `error` | Chain feed unreachable / chain unknown — offline counting paused |
 
 > **Why PeerID instead of SS58 address?** The telemetry feed no longer carries validator/authority addresses (the GRANDPA authority-set messages are not emitted by the current backend — verified against Polkadot, Kusama and the system parachains), so there is nothing to match an address against. The libp2p PeerID is the only stable identity in the feed; display names work too but are operator-chosen and not enforced unique. SS58 (Kusama- or Polkadot-style) address support would require joining this with on-chain queries (e.g. `session.validators` via RPC) — not implemented.
@@ -101,7 +101,7 @@ Go to **Settings → Secrets and variables → Actions** and add these repositor
 - `peerId` — recommended, stable across node restarts
 - `name` — alternative matcher: exact case-insensitive telemetry display name; falls back to substring if exactly one node matches
 - `label` — what the dashboard card shows
-- `consecutiveOfflineChecksBeforeAlert` — default 2. With the 2-hour schedule this means alerts fire after ~4 hours offline. Lower it (works with any schedule) if you want faster alerts.
+- `consecutiveOfflineChecksBeforeAlert` — default 1: alert fires on the first missed check, so max latency = one schedule interval (2 h). Raise it to damp single-run hiccups (e.g. telemetry restarts).
 
 #### Getting Telegram credentials
 
@@ -125,7 +125,7 @@ The scheduled workflow runs **every 2 hours** (12 runs/day, ~6 min each ≈ 72 m
 
 - To change the cadence: edit `.github/workflows/monitor.yml` (`schedule → cron`, currently `7 */2 * * *` — minute 7 avoids the top-of-hour rush on shared runners).
 - `status.json` commits use `[skip ci]`, so they never trigger additional runs.
-- Alert latency = schedule × `consecutiveOfflineChecksBeforeAlert` (default 2 × 2 h ≈ 4 h).
+- Alert latency = schedule × `consecutiveOfflineChecksBeforeAlert` (default 1 × 2 h = 2 h).
 
 ## Files
 
