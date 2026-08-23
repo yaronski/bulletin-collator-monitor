@@ -203,7 +203,7 @@ async function main() {
   const envConfig = process.env.NODES_CONFIG ? JSON.parse(process.env.NODES_CONFIG) : null;
   const fileConfig = readJSON(join(ROOT, 'config.json'));
   const watch = envConfig?.nodes || fileConfig.nodes || [];
-  const threshold = envConfig?.consecutiveOfflineChecksBeforeAlert ?? fileConfig.consecutiveOfflineChecksBeforeAlert ?? 2;
+  const threshold = envConfig?.consecutiveOfflineChecksBeforeAlert ?? fileConfig.consecutiveOfflineChecksBeforeAlert ?? 1;
   const feedUrl = envConfig?.feedUrl || fileConfig.feedUrl || DEFAULT_FEED_URL;
 
   console.log(`\nMulti-chain collator monitor — ${new Date().toISOString()}`);
