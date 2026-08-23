@@ -1,185 +1,171 @@
 {
-  "lastUpdated": "2026-08-22T23:14:09.354Z",
+  "lastUpdated": "2026-08-23T00:00:58.402Z",
   "feed": {
     "connected": true,
-    "chainLabel": "Polkadot Bulletin",
+    "registrySize": 151,
     "error": null
   },
+  "chains": {
+    "Polkadot Bulletin": {
+      "genesis": "0x2761c95259d59e55ae3daf756c1413b46e45a5a2987299f8ef8e5d8e4776cbc4",
+      "feedOk": true,
+      "feedError": null,
+      "relay": "polkadot",
+      "nodeCount": 9,
+      "bestBlock": 1487836,
+      "finalizedBlock": 1487828,
+      "nodesTable": [
+        {
+          "name": "DPSTK",
+          "peerId": "12D3KooWHPmACsPbXDo9n4qjBZqGEqJ7JLG2fvaCWNCMWyysg6vQ",
+          "version": "1.24.1-8ae9775dc43",
+          "best": 1487836,
+          "finalized": 1487828,
+          "peers": 16,
+          "ttpb": 6067,
+          "stateSize": 986300740,
+          "uploadAvgBs": 27708,
+          "downloadAvgBs": 15253,
+          "stale": false
+        },
+        {
+          "name": "ExtraCoin",
+          "peerId": "12D3KooWMc7ZJ6JGiehG1H45JL69QTPivEBnzm8LihkEEFjYMRnr",
+          "version": "1.24.1-8ae9775dc43",
+          "best": 1487836,
+          "finalized": 1487828,
+          "peers": 15,
+          "ttpb": 6065,
+          "stateSize": 986479170,
+          "uploadAvgBs": 24603,
+          "downloadAvgBs": 15972,
+          "stale": false
+        },
+        {
+          "name": "Faraday",
+          "peerId": "12D3KooWNy2J75qK8C4o8ooFHpLY4rPPsZcR8qNjgDuW2tvCqEWG",
+          "version": "1.24.0-660acefe665",
+          "best": 1487836,
+          "finalized": 1487828,
+          "peers": 15,
+          "ttpb": 6063,
+          "stateSize": 172115580,
+          "uploadAvgBs": 28946,
+          "downloadAvgBs": 12750,
+          "stale": false
+        },
+        {
+          "name": "MegatronBulletin",
+          "peerId": "12D3KooWHEYTsuU8mZiNuEovmCVp1g1tQBVceHDpCrc7p4VN9wZ4",
+          "version": "1.24.1-8ae9775dc43",
+          "best": 1487836,
+          "finalized": 1487828,
+          "peers": 16,
+          "ttpb": 6067,
+          "stateSize": 986389200,
+          "uploadAvgBs": 22863,
+          "downloadAvgBs": 21976,
+          "stale": false
+        },
+        {
+          "name": "PN-Bulletin-01",
+          "peerId": "12D3KooWBtEY3wxRxF7VgJtu8ottRSZxr5CxS4n2itHpmsZK8K5n",
+          "version": "1.24.1-8ae9775dc43",
+          "best": 1487836,
+          "finalized": 1487828,
+          "peers": 11,
+          "ttpb": 6068,
+          "stateSize": 0,
+          "uploadAvgBs": 19406,
+          "downloadAvgBs": 21515,
+          "stale": false
+        },
+        {
+          "name": "PN-Bulletin-Boot",
+          "peerId": "12D3KooWG1DYbATkDZVecTrnzmTiDiXVpbvFL3fn8iUiCEuqQz9c",
+          "version": "1.24.1-8ae9775dc43",
+          "best": 1487836,
+          "finalized": 1487828,
+          "peers": 11,
+          "ttpb": 6068,
+          "stateSize": 986343400,
+          "uploadAvgBs": 16323,
+          "downloadAvgBs": 15992,
+          "stale": false
+        },
+        {
+          "name": "Polkadotters",
+          "peerId": "12D3KooWEKjYGD5a3veYTcV3s7rkvXfi9gxYbZEbBCk2NtqH8Lp2",
+          "version": "1.24.0-660acefe665",
+          "best": 1487836,
+          "finalized": 1487828,
+          "peers": 16,
+          "ttpb": 6067,
+          "stateSize": 986491260,
+          "uploadAvgBs": 19248,
+          "downloadAvgBs": 27172,
+          "stale": false
+        },
+        {
+          "name": "Rotko Networks - rpc-bulletin-polkadot-01 Collator",
+          "peerId": "12D3KooWEwqFeJAeUi2YLU5963WHp4E8qit6jeAjhczB4YbDzx1H",
+          "version": "1.22.4-82af15d17fd",
+          "best": 1487836,
+          "finalized": 1487828,
+          "peers": 16,
+          "ttpb": 6067,
+          "stateSize": 986260860,
+          "uploadAvgBs": 4083,
+          "downloadAvgBs": 38299,
+          "stale": false
+        },
+        {
+          "name": "Simply Staking: Bulletin Node CA",
+          "peerId": "12D3KooWH7GPMht12HuqCrDcS57goPwAko3zeFMs9taC49wHWPun",
+          "version": "1.24.1-8ae9775dc43",
+          "best": 1487836,
+          "finalized": 1487828,
+          "peers": 16,
+          "ttpb": 6064,
+          "stateSize": 986500860,
+          "uploadAvgBs": 16435,
+          "downloadAvgBs": 25765,
+          "stale": false
+        }
+      ]
+    }
+  },
   "nodes": {
-    "12D3KooWMc…MRnr": {
+    "Polkadot Bulletin:12D3KooWMc…MRnr": {
       "peerId": "12D3KooWMc7ZJ6JGiehG1H45JL69QTPivEBnzm8LihkEEFjYMRnr",
+      "matchedBy": "peerId",
       "label": "ExtraCoin",
+      "chain": "Polkadot Bulletin",
       "isOnline": true,
       "stale": false,
       "version": "1.24.1-8ae9775dc43",
       "impl": "polkadot-parachain",
       "name": "ExtraCoin",
-      "best": 1487373,
-      "finalized": 1487367,
+      "best": 1487836,
+      "finalized": 1487828,
       "peers": 15,
-      "ttpb": 5898,
-      "stateSize": 986503400,
-      "uploadAvgBs": 24939,
-      "downloadAvgBs": 16365,
+      "ttpb": 6065,
+      "stateSize": 986479170,
+      "uploadAvgBs": 24603,
+      "downloadAvgBs": 15972,
       "startupTime": 1786366863953,
-      "lastBlockAt": "2026-08-22T23:14:06.893Z",
+      "lastBlockAt": "2026-08-23T00:00:54.502Z",
       "consecutiveOffline": 0,
       "alertedOffline": false,
       "statusText": "online",
-      "lastChecked": "2026-08-22T23:14:09.354Z",
+      "lastChecked": "2026-08-23T00:00:58.402Z",
       "lastError": null,
       "history": [
         {
-          "ts": "2026-08-22T22:25:09.664Z",
-          "best": 1486888
-        },
-        {
-          "ts": "2026-08-22T22:42:21.352Z",
-          "best": 1487058
-        },
-        {
-          "ts": "2026-08-22T23:14:09.354Z",
-          "best": 1487373
+          "ts": "2026-08-23T00:00:58.402Z",
+          "best": 1487836
         }
       ]
     }
-  },
-  "chain": {
-    "label": "Polkadot Bulletin",
-    "nodeCount": 10,
-    "bestBlock": 1487373,
-    "finalizedBlock": 1487367
-  },
-  "nodesTable": [
-    {
-      "name": "DPSTK",
-      "peerId": "12D3KooWHPmACsPbXDo9n4qjBZqGEqJ7JLG2fvaCWNCMWyysg6vQ",
-      "version": "1.24.1-8ae9775dc43",
-      "best": 1487373,
-      "finalized": 1487367,
-      "peers": 16,
-      "ttpb": 5899,
-      "stateSize": null,
-      "uploadAvgBs": null,
-      "downloadAvgBs": null,
-      "stale": false
-    },
-    {
-      "name": "ExtraCoin",
-      "peerId": "12D3KooWMc7ZJ6JGiehG1H45JL69QTPivEBnzm8LihkEEFjYMRnr",
-      "version": "1.24.1-8ae9775dc43",
-      "best": 1487373,
-      "finalized": 1487367,
-      "peers": 15,
-      "ttpb": 5898,
-      "stateSize": 986503400,
-      "uploadAvgBs": 24939,
-      "downloadAvgBs": 16365,
-      "stale": false
-    },
-    {
-      "name": "Faraday",
-      "peerId": "12D3KooWNy2J75qK8C4o8ooFHpLY4rPPsZcR8qNjgDuW2tvCqEWG",
-      "version": "1.24.0-660acefe665",
-      "best": 1487373,
-      "finalized": 1487367,
-      "peers": 15,
-      "ttpb": 5898,
-      "stateSize": 132497520,
-      "uploadAvgBs": 28607,
-      "downloadAvgBs": 11536,
-      "stale": false
-    },
-    {
-      "name": "INTERWEB-COL1",
-      "peerId": "12D3KooWLcMxWNUUNhdVq62P691VtD2iFwyD83i7SxtkGxAuUb2y",
-      "version": "1.24.0-660acefe665",
-      "best": 1487373,
-      "finalized": 1487367,
-      "peers": 16,
-      "ttpb": 5899,
-      "stateSize": 986527500,
-      "uploadAvgBs": 29978,
-      "downloadAvgBs": 17887,
-      "stale": false
-    },
-    {
-      "name": "MegatronBulletin",
-      "peerId": "12D3KooWHEYTsuU8mZiNuEovmCVp1g1tQBVceHDpCrc7p4VN9wZ4",
-      "version": "1.24.1-8ae9775dc43",
-      "best": 1487373,
-      "finalized": 1487367,
-      "peers": 16,
-      "ttpb": 5874,
-      "stateSize": 986410000,
-      "uploadAvgBs": 23513,
-      "downloadAvgBs": 19463,
-      "stale": false
-    },
-    {
-      "name": "PN-Bulletin-01",
-      "peerId": "12D3KooWBtEY3wxRxF7VgJtu8ottRSZxr5CxS4n2itHpmsZK8K5n",
-      "version": "1.24.1-8ae9775dc43",
-      "best": 1487373,
-      "finalized": 1487367,
-      "peers": 11,
-      "ttpb": 5899,
-      "stateSize": null,
-      "uploadAvgBs": null,
-      "downloadAvgBs": null,
-      "stale": false
-    },
-    {
-      "name": "PN-Bulletin-Boot",
-      "peerId": "12D3KooWG1DYbATkDZVecTrnzmTiDiXVpbvFL3fn8iUiCEuqQz9c",
-      "version": "1.24.1-8ae9775dc43",
-      "best": 1487373,
-      "finalized": 1487367,
-      "peers": 11,
-      "ttpb": 5898,
-      "stateSize": 986320500,
-      "uploadAvgBs": 15251,
-      "downloadAvgBs": 16951,
-      "stale": false
-    },
-    {
-      "name": "Polkadotters",
-      "peerId": "12D3KooWEKjYGD5a3veYTcV3s7rkvXfi9gxYbZEbBCk2NtqH8Lp2",
-      "version": "1.24.0-660acefe665",
-      "best": 1487373,
-      "finalized": 1487367,
-      "peers": 16,
-      "ttpb": 5897,
-      "stateSize": null,
-      "uploadAvgBs": null,
-      "downloadAvgBs": null,
-      "stale": false
-    },
-    {
-      "name": "Rotko Networks - rpc-bulletin-polkadot-01 Collator",
-      "peerId": "12D3KooWEwqFeJAeUi2YLU5963WHp4E8qit6jeAjhczB4YbDzx1H",
-      "version": "1.22.4-82af15d17fd",
-      "best": 1487373,
-      "finalized": 1487367,
-      "peers": 16,
-      "ttpb": 5867,
-      "stateSize": 986274900,
-      "uploadAvgBs": 4114,
-      "downloadAvgBs": 38743,
-      "stale": false
-    },
-    {
-      "name": "Simply Staking: Bulletin Node CA",
-      "peerId": "12D3KooWH7GPMht12HuqCrDcS57goPwAko3zeFMs9taC49wHWPun",
-      "version": "1.24.1-8ae9775dc43",
-      "best": 1487373,
-      "finalized": 1487367,
-      "peers": 16,
-      "ttpb": 5898,
-      "stateSize": 986476900,
-      "uploadAvgBs": 19479,
-      "downloadAvgBs": 26287,
-      "stale": false
-    }
-  ]
+  }
 }
