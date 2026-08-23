@@ -8,6 +8,6 @@
       "label": "ExtraCoin"
     }
   ],
-  "consecutiveOfflineChecksBeforeAlert": 2,
+  "consecutiveOfflineChecksBeforeAlert": 1,
   "_alertComment": "Set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID as GitHub Actions secrets to enable Telegram alerts."
 }
