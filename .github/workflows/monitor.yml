@@ -1,8 +1,8 @@
-name: Bulletin collator monitor
+name: Collator monitor
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '7 */2 * * *' # every 2 hours at minute 7 (avoids the top-of-hour cron rush)
   workflow_dispatch:
 
 permissions:
