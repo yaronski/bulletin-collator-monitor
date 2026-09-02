@@ -309,7 +309,6 @@ body {
     <div class="stat ok" id="statOnlineBox"><div class="stat-label">Online</div><div class="stat-value" id="statOnline">&ndash;</div></div>
     <div class="stat" id="statOfflineBox"><div class="stat-label">Offline</div><div class="stat-value" id="statOffline">&ndash;</div></div>
     <div class="stat" id="statChainsBox"><div class="stat-label">Chains</div><div class="stat-value" id="statChains">&ndash;</div></div>
-    <div class="stat" id="statNodesBox"><div class="stat-label">Nodes seen</div><div class="stat-value" id="statNodes">&ndash;</div></div>
   </div>
 
   <div class="section-label">Watched Collators</div>
@@ -472,11 +471,9 @@ function renderStats(nodes, chains) {
   var on = v.filter(function(c) { return c.statusText === 'online'; }).length;
   var off = v.filter(function(c) { return c.statusText === 'offline'; }).length;
   var err = v.filter(function(c) { return c.statusText === 'error' || c.statusText === 'stale'; }).length;
-  var nodesSeen = Object.values(chains).reduce(function(a, c) { return a + (c.nodeCount || 0); }, 0);
   document.getElementById('statOnline').textContent = on;
   document.getElementById('statOffline').textContent = off;
   document.getElementById('statChains').textContent = Object.keys(chains).length;
-  document.getElementById('statNodes').textContent = nodesSeen;
   document.getElementById('statOnlineBox').className = 'stat' + (on > 0 ? ' ok' : '');
   document.getElementById('statOfflineBox').className = 'stat' + ((off + err) > 0 ? ' bad' : '');
 }
