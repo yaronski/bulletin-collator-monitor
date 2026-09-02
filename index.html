@@ -475,7 +475,7 @@ function sparklineHtml(history) {
 function renderStats(nodes, chains) {
   var v = Object.values(nodes);
   var on = v.filter(function(c) { return c.statusText === 'online'; }).length;
-  var off = v.filter(function(c) { return c.statusText === 'offline'; }).length;
+  var off = v.filter(function(c) { return c.statusText === 'offline'; }).length; // real state (incl. expected 'missing')
   var err = v.filter(function(c) { return c.statusText === 'error' || c.statusText === 'stale'; }).length;
   document.getElementById('statOnline').textContent = on;
   document.getElementById('statOffline').textContent = off;
@@ -610,7 +610,9 @@ function escapeHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&l
 
 function renderAlert(nodes, feed) {
   var banner = document.getElementById('alertBanner');
-  var offline = Object.values(nodes).filter(function(c) { return c.statusText === 'offline'; });
+  // only nodes whose alerts are enabled (alerts !== false in config) belong in the alarm banner;
+  // e.g. upcoming candidates are expected to be 'missing' until their referendum passes
+  var offline = Object.values(nodes).filter(function(c) { return c.statusText === 'offline' && c.alertsEnabled !== false; });
   if (feed && feed.error) {
     banner.innerHTML = '\u26A0 Telemetry feed problem: ' + escapeHtml(feed.error) + ' — offline detection paused.';
     banner.classList.add('show');

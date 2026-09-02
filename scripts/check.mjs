@@ -590,6 +590,7 @@ async function main() {
       addressShort: cfg.address ? shortAddr(cfg.address) : null,
       address: cfg.address || null,
       hasAddress: !!cfg._raw,
+      alertsEnabled: alertsOn,
       matchedBy: how !== 'none' ? how : null,
       label: displayLabel,
       chain: chainLabel,
