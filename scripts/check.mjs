@@ -96,6 +96,11 @@ function twox128(s) {
 }
 const storageKey = (mod, item) => '0x' + twox128(mod) + twox128(item);
 const KEY_VALIDATORS = storageKey('Session', 'Validators');
+// current system-parachain runtimes: CandidateList is a plain twox128 value,
+// Vec<CandidateInfo{ who: AccountId32, deposit: fixed u128 (16 bytes LE) }>
+// (old 'Candidates' item no longer exists there - verified on Kusama People / Asset Hub)
+const KEY_CANDIDATELIST = storageKey('CollatorSelection', 'CandidateList');
+// fallback for older runtimes still using the 'Candidates' item
 const KEY_CANDIDATES = storageKey('CollatorSelection', 'Candidates');
 const KEY_INVULN = storageKey('CollatorSelection', 'Invulnerables');
 
@@ -164,18 +169,22 @@ function parseVecAccountId(hex) {
   }
   return out;
 }
-// Vec<CandidateInfo{ who: AccountId32, deposit: Compact<Balance> }>
-function parseCandidates(hex) {
-  const b = Buffer.from(hex.replace(/^0x/, ''), 'hex');
-  const { v: len, o: start } = readCompact(b, 0);
+// CandidateList (current runtimes): plain value Vec<CandidateInfo>
+// CandidateInfo = { who: AccountId32 (32 bytes), deposit: Balance as fixed u128 (16 bytes LE) }
+// verified byte-aligned on Kusama People (15 entries) and Polkadot Asset Hub
+async function fetchCandidateList(url, rpcFn) {
+  let v = await rpcFn(url, 'state_getStorage', [KEY_CANDIDATELIST]);
+  if (!v) v = await rpcFn(url, 'state_getStorage', [KEY_CANDIDATES]); // older runtime fallback
+  if (!v) return [];
+  const b = Buffer.from(v.replace(/^0x/, ''), 'hex');
+  const { v: len, o } = readCompact(b, 0);
   const out = [];
-  let p = start;
-  for (let i = 0; i < len && p + 32 <= b.length; i++) {
+  let p = o;
+  for (let i = 0; i < len && p + 48 <= b.length; i++, p += 48) {
     const who = '0x' + b.subarray(p, p + 32).toString('hex');
-    p += 32;
-    const c = readCompact(b, p);
-    out.push({ who, deposit: BigInt.asUintN(64, c.v) });
-    p = c.o;
+    const dep = b.subarray(p + 32, p + 48);
+    const deposit = dep.readBigUInt64LE(0) + (dep.readBigUInt64LE(8) << 64n);
+    out.push({ who, deposit });
   }
   return out;
 }
@@ -312,7 +321,7 @@ function matchNode(cfg, onlineNodes) {
 }
 
 const relayOf = (label) => (/kusama/i.test(label) ? 'kusama' : /polkadot/i.test(label) ? 'polkadot' : 'other');
-const isRelay = (label) => /^(kusama|polkadot)$/i.test(String(label).trim());
+const isRelay = (label) => /^(kusama|polkadot)$/i.test(String(label).trim()); // exact relay names only - system parachains like 'Polkadot Asset Hub' are NOT relays
 
 async function main() {
   const envConfig = process.env.NODES_CONFIG ? JSON.parse(process.env.NODES_CONFIG) : null;
@@ -391,13 +400,12 @@ async function main() {
     }
     try {
       console.log(`\nOn-chain check: ${label} (${url})`);
-      const [valHex, candHex, invHex] = await Promise.all([
+      const [valHex, invHex] = await Promise.all([
         rpc(url, 'state_getStorage', [KEY_VALIDATORS]),
-        isRelay(label) ? Promise.resolve(null) : rpc(url, 'state_getStorage', [KEY_CANDIDATES]),
         isRelay(label) ? Promise.resolve(null) : rpc(url, 'state_getStorage', [KEY_INVULN]),
       ]);
       const validators = valHex ? parseVecAccountId(valHex) : [];
-      const candidates = candHex ? parseCandidates(candHex) : null;
+      const candidates = isRelay(label) ? null : await fetchCandidateList(url, rpc);
       const invulnerables = invHex ? parseVecAccountId(invHex) : null;
       console.log(`  ✓ ${validators.length} in Session.Validators` + (candidates ? `, ${candidates.length} candidates, ${invulnerables.length} invulnerables` : ' (relay)'));
       rpcChains.set(label, { url, validators, candidates, invulnerables, relay: isRelay(label) });

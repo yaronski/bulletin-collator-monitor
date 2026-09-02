@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2026-09-02T14:19:17.591Z",
+  "lastUpdated": "2026-09-02T15:21:26.954Z",
   "feed": {
     "connected": true,
-    "registrySize": 144,
+    "registrySize": 145,
     "error": null
   },
   "chains": {
@@ -12,124 +12,124 @@
       "feedError": null,
       "relay": "polkadot",
       "nodeCount": 9,
-      "bestBlock": 1638651,
-      "finalizedBlock": 1638645,
+      "bestBlock": 1639258,
+      "finalizedBlock": 1639249,
       "nodesTable": [
         {
           "name": "DPSTK",
           "peerId": "12D3KooWHPmACsPbXDo9n4qjBZqGEqJ7JLG2fvaCWNCMWyysg6vQ",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1638651,
-          "finalized": 1638645,
+          "best": 1639258,
+          "finalized": 1639249,
           "peers": 15,
-          "ttpb": 6252,
-          "stateSize": 986969800,
-          "uploadAvgBs": 24064,
-          "downloadAvgBs": 13596,
+          "ttpb": 6210,
+          "stateSize": 987032260,
+          "uploadAvgBs": 24865,
+          "downloadAvgBs": 13854,
           "stale": false
         },
         {
           "name": "ExtraCoin",
           "peerId": "12D3KooWMc7ZJ6JGiehG1H45JL69QTPivEBnzm8LihkEEFjYMRnr",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1638651,
-          "finalized": 1638645,
+          "best": 1639258,
+          "finalized": 1639249,
           "peers": 14,
-          "ttpb": 6175,
-          "stateSize": 986599400,
-          "uploadAvgBs": 20182,
-          "downloadAvgBs": 16071,
+          "ttpb": 6211,
+          "stateSize": 986567360,
+          "uploadAvgBs": 21148,
+          "downloadAvgBs": 16823,
           "stale": false
         },
         {
           "name": "Faraday",
           "peerId": "12D3KooWNy2J75qK8C4o8ooFHpLY4rPPsZcR8qNjgDuW2tvCqEWG",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1638651,
-          "finalized": 1638645,
+          "best": 1639258,
+          "finalized": 1639249,
           "peers": 15,
-          "ttpb": 6249,
-          "stateSize": 678185400,
-          "uploadAvgBs": 25888,
-          "downloadAvgBs": 12627,
+          "ttpb": 6211,
+          "stateSize": 875110140,
+          "uploadAvgBs": 26671,
+          "downloadAvgBs": 13072,
           "stale": false
         },
         {
           "name": "INTERWEB-COL1",
           "peerId": "12D3KooWLcMxWNUUNhdVq62P691VtD2iFwyD83i7SxtkGxAuUb2y",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1638651,
-          "finalized": 1638645,
+          "best": 1639258,
+          "finalized": 1639249,
           "peers": 15,
-          "ttpb": 6307,
-          "stateSize": 987078700,
-          "uploadAvgBs": 25947,
-          "downloadAvgBs": 15210,
+          "ttpb": 6212,
+          "stateSize": 987143230,
+          "uploadAvgBs": 27335,
+          "downloadAvgBs": 16986,
           "stale": false
         },
         {
           "name": "MegatronBulletin",
           "peerId": "12D3KooWHEYTsuU8mZiNuEovmCVp1g1tQBVceHDpCrc7p4VN9wZ4",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1638651,
-          "finalized": 1638645,
+          "best": 1639258,
+          "finalized": 1639249,
           "peers": 15,
-          "ttpb": 6302,
-          "stateSize": 986646140,
-          "uploadAvgBs": 18434,
-          "downloadAvgBs": 18630,
+          "ttpb": 6230,
+          "stateSize": 986712400,
+          "uploadAvgBs": 19209,
+          "downloadAvgBs": 21304,
           "stale": false
         },
         {
           "name": "PN-Bulletin-01",
           "peerId": "12D3KooWBtEY3wxRxF7VgJtu8ottRSZxr5CxS4n2itHpmsZK8K5n",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1638651,
-          "finalized": 1638645,
+          "best": 1639258,
+          "finalized": 1639249,
           "peers": 14,
-          "ttpb": 6299,
+          "ttpb": 6206,
           "stateSize": 0,
-          "uploadAvgBs": 20253,
-          "downloadAvgBs": 24247,
+          "uploadAvgBs": 20724,
+          "downloadAvgBs": 25550,
           "stale": false
         },
         {
           "name": "PN-Bulletin-Boot",
           "peerId": "12D3KooWG1DYbATkDZVecTrnzmTiDiXVpbvFL3fn8iUiCEuqQz9c",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1638651,
-          "finalized": 1638645,
+          "best": 1639258,
+          "finalized": 1639249,
           "peers": 14,
-          "ttpb": 6304,
-          "stateSize": 986842300,
-          "uploadAvgBs": 14380,
-          "downloadAvgBs": 20011,
+          "ttpb": 6208,
+          "stateSize": 986897660,
+          "uploadAvgBs": 16848,
+          "downloadAvgBs": 20907,
           "stale": false
         },
         {
           "name": "Polkadotters",
           "peerId": "12D3KooWEKjYGD5a3veYTcV3s7rkvXfi9gxYbZEbBCk2NtqH8Lp2",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1638651,
-          "finalized": 1638645,
+          "best": 1639258,
+          "finalized": 1639249,
           "peers": 15,
-          "ttpb": 6293,
-          "stateSize": 986897300,
-          "uploadAvgBs": 14061,
-          "downloadAvgBs": 26599,
+          "ttpb": 6210,
+          "stateSize": 986958700,
+          "uploadAvgBs": 15531,
+          "downloadAvgBs": 27139,
           "stale": false
         },
         {
           "name": "Simply Staking: Bulletin Node CA",
           "peerId": "12D3KooWH7GPMht12HuqCrDcS57goPwAko3zeFMs9taC49wHWPun",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1638651,
-          "finalized": 1638645,
+          "best": 1639258,
+          "finalized": 1639249,
           "peers": 15,
-          "ttpb": 6273,
-          "stateSize": 987171700,
-          "uploadAvgBs": 13934,
-          "downloadAvgBs": 24028,
+          "ttpb": 6212,
+          "stateSize": 987140300,
+          "uploadAvgBs": 18003,
+          "downloadAvgBs": 24911,
           "stale": false
         }
       ]
@@ -140,7 +140,7 @@
       "rpcOk": true,
       "isRelay": false,
       "activeSetSize": 16,
-      "candidateSetSize": null,
+      "candidateSetSize": 5,
       "invulnerableSetSize": 10,
       "activeSet": [
         "CbLd7BdUr8DqD4TciR1kH6w12bbHBCW9n2MHGCtbxq4U5ty",
@@ -167,7 +167,7 @@
       "rpcOk": true,
       "isRelay": false,
       "activeSetSize": 14,
-      "candidateSetSize": null,
+      "candidateSetSize": 3,
       "invulnerableSetSize": 11,
       "activeSet": [
         "16WWmr2Xqgy5fna35GsNHXMU7vDBM12gzHCFGibQjSmKpAN",
@@ -201,15 +201,15 @@
       "version": "1.24.1-8ae9775dc43",
       "impl": "polkadot-parachain",
       "name": "ExtraCoin",
-      "best": 1638651,
-      "finalized": 1638645,
+      "best": 1639258,
+      "finalized": 1639249,
       "peers": 14,
-      "ttpb": 6175,
-      "stateSize": 986599400,
-      "uploadAvgBs": 20182,
-      "downloadAvgBs": 16071,
+      "ttpb": 6211,
+      "stateSize": 986567360,
+      "uploadAvgBs": 21148,
+      "downloadAvgBs": 16823,
       "startupTime": 1786366863953,
-      "lastBlockAt": "2026-09-02T14:19:12.652Z",
+      "lastBlockAt": "2026-09-02T15:21:25.020Z",
       "chainStatus": null,
       "invulnerable": null,
       "deposit": null,
@@ -219,7 +219,7 @@
       "alertedRecovery": false,
       "alertedMissing": false,
       "statusText": "online",
-      "lastChecked": "2026-09-02T14:19:17.591Z",
+      "lastChecked": "2026-09-02T15:21:26.954Z",
       "lastError": null,
       "history": [
         {
@@ -241,6 +241,14 @@
         {
           "ts": "2026-09-02T14:19:17.591Z",
           "best": 1638651
+        },
+        {
+          "ts": "2026-09-02T15:13:15.909Z",
+          "best": 1639179
+        },
+        {
+          "ts": "2026-09-02T15:21:26.954Z",
+          "best": 1639258
         }
       ]
     },
@@ -270,12 +278,12 @@
       "invulnerable": null,
       "deposit": null,
       "consecutiveOffline": 0,
-      "consecutiveMissing": 2,
+      "consecutiveMissing": 4,
       "alertedOffline": false,
       "alertedRecovery": false,
       "alertedMissing": false,
       "statusText": "offline",
-      "lastChecked": "2026-09-02T14:19:17.591Z",
+      "lastChecked": "2026-09-02T15:21:26.954Z",
       "lastError": null,
       "history": [
         {
@@ -284,6 +292,14 @@
         },
         {
           "ts": "2026-09-02T14:19:17.591Z",
+          "best": null
+        },
+        {
+          "ts": "2026-09-02T15:13:15.909Z",
+          "best": null
+        },
+        {
+          "ts": "2026-09-02T15:21:26.954Z",
           "best": null
         }
       ]
@@ -314,12 +330,12 @@
       "invulnerable": null,
       "deposit": null,
       "consecutiveOffline": 0,
-      "consecutiveMissing": 2,
+      "consecutiveMissing": 4,
       "alertedOffline": false,
       "alertedRecovery": false,
       "alertedMissing": false,
       "statusText": "offline",
-      "lastChecked": "2026-09-02T14:19:17.591Z",
+      "lastChecked": "2026-09-02T15:21:26.954Z",
       "lastError": null,
       "history": [
         {
@@ -328,6 +344,14 @@
         },
         {
           "ts": "2026-09-02T14:19:17.591Z",
+          "best": null
+        },
+        {
+          "ts": "2026-09-02T15:13:15.909Z",
+          "best": null
+        },
+        {
+          "ts": "2026-09-02T15:21:26.954Z",
           "best": null
         }
       ]

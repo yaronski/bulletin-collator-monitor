@@ -170,7 +170,7 @@ body {
   white-space: nowrap; cursor: default;
 }
 .meta-key.help { text-decoration: underline dotted var(--text3) 1px; text-underline-offset: 3px; }
-.meta-val { font-family: var(--mono); font-size: 13px; color: var(--text); white-space: nowrap; }
+.meta-val { font-family: var(--mono); font-size: 13px; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
 .meta-val.highlight { color: var(--red); }
 .meta-val.warn      { color: var(--amber); }
 .meta-val.muted     { color: var(--text3); }
@@ -326,7 +326,7 @@ body {
 var REFRESH_MS = 5 * 60 * 1000;
 var countdownInterval;
 var TOOLTIPS = {
-  ttpb: 'Time to produce block: how long this node took to build its last block. Below ~6 s (the parachain slot time) is healthy; higher values mean the node is struggling to produce/author blocks in time.',
+  ttpb: 'Block time: how long this node took to import its latest block (the telemetry feed field is the same the official frontend shows as "Block Time"). ~6 s is the normal Bulletin rhythm; values well above 10 s mean the node is falling behind.',
   peers: 'Number of libp2p peers currently connected. Fewer than ~5 usually means network problems.',
   stateSize: 'Size of the node\'s state cache (pruned) in memory.',
   upload: 'Average network upload while the check window ran.',
@@ -459,10 +459,16 @@ function sparklineHtml(history) {
   }).join(' ');
   var spanTxt = span > 0 ? '+' + span.toLocaleString('en-US') + ' blocks' : 'no progress';
   var durH = Math.round((maxT - minT) / 3600000);
+  var circles = pts.map(function(p) {
+    var x = PAD + ((p.ts - minT) / (maxT - minT)) * (W - 2*PAD);
+    var y = span === 0 ? H/2 : H - PAD - ((p.best - minB) / span) * (H - 2*PAD);
+    return '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="2.5" fill="#4ade80"><title>' + p.best.toLocaleString('en-US') + ' \u00b7 ' + new Date(p.ts).toLocaleString() + '</title></circle>';
+  }).join('');
   return '<div class="sparkline">'
     + '<div class="sparkline-label" data-tip="spark">Best block \u00b7 ' + pts.length + ' checks \u00b7 ' + spanTxt + ' in ~' + durH + 'h</div>'
     + '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none">'
     + '<path d="' + path + '" fill="none" stroke="#4ade80" stroke-width="1.5"/>'
+    + circles
     + '</svg></div>';
 }
 
@@ -518,11 +524,11 @@ function renderCards(nodes, chains) {
     meta += metaItem('Peers', 'peers', col.peers != null ? col.peers : '\u2013', col.peers != null && col.peers < 5 ? 'warn' : '');
     if (col.chainStatus) meta += metaItem('Collator set', null, escapeHtml(col.chainStatus) + (col.invulnerable ? ' \u00b7 invuln' : ''), (col.chainStatus === 'missing' || col.chainStatus === 'inactive') ? 'highlight' : (col.chainStatus === 'standby' ? 'muted' : ''));
     if (col.deposit) meta += metaItem('Bond', null, escapeHtml(fmtPlanck(col.deposit)));
-    if (col.ttpb != null) meta += metaItem('TtPB', 'ttpb', (col.ttpb / 1000).toFixed(1) + 's', col.ttpb > 6000 ? 'warn' : '');
+    if (col.ttpb != null) meta += metaItem('Block time', 'ttpb', (col.ttpb / 1000).toFixed(1) + 's', col.ttpb > 10000 ? 'warn' : '');
     if (col.uploadAvgBs != null) meta += metaItem('Upload', 'upload', fmtRate(col.uploadAvgBs));
     if (col.downloadAvgBs != null) meta += metaItem('Download', 'download', fmtRate(col.downloadAvgBs));
     if (col.stateSize != null && col.stateSize > 0) meta += metaItem('State cache', 'stateSize', fmtBytes(col.stateSize));
-    if (col.version) meta += metaItem('Version', null, escapeHtml(col.version));
+    if (col.version) meta += metaItem('Version', null, '<span title="' + escapeHtml(col.version) + '">' + escapeHtml(col.version.split('-')[0].slice(0, 12)) + '</span>');
     if (col.startupTime) meta += metaItem('Uptime', null, uptimeFrom(col.startupTime));
     if (col.consecutiveOffline > 0) meta += metaItem('Consec. offline', null, String(col.consecutiveOffline), 'highlight');
 
