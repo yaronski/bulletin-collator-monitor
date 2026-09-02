@@ -133,6 +133,7 @@ body {
 }
 .status-badge.online   { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-d); }
 .status-badge.offline  { background: var(--red-bg);   color: var(--red);   border: 1px solid var(--red-d); }
+.status-badge.standby  { background: #0c1a2e;        color: #60a5fa;      border: 1px solid #1e3a5f; }
 .status-badge.stale    { background: var(--amber-bg); color: var(--amber); border: 1px solid #78350f; }
 .status-badge.error    { background: var(--amber-bg); color: var(--amber); border: 1px solid #78350f; }
 
@@ -308,7 +309,7 @@ function uptimeFrom(startupTime) {
   return h + 'h ' + m + 'm';
 }
 function statusLabel(s) {
-  return { online:'ONLINE', offline:'OFFLINE', stale:'STALE', error:'ERROR' }[s] || s.toUpperCase();
+  return { online:'ONLINE', offline:'OFFLINE', stale:'STALE', error:'ERROR', standby:'STANDBY' }[s] || s.toUpperCase();
 }
 function fmtRate(bs) {
   if (bs == null) return '\u2013';
@@ -408,6 +409,12 @@ function renderCards(nodes) {
       ? '<div class="meta-item"><div class="meta-key">State cache</div><div class="meta-val">' + fmtBytes(col.stateSize) + '</div></div>'
       : '';
     var peersCls = col.peers != null && col.peers < 5 ? 'warn' : '';
+    var setStatus = col.chainStatus
+      ? '<div class="meta-item"><div class="meta-key">Collator set</div><div class="meta-val ' + (col.chainStatus === 'active' ? '' : (col.chainStatus === 'missing' || col.chainStatus === 'inactive') ? 'highlight' : 'muted') + '">' + escapeHtml(col.chainStatus) + (col.invulnerable ? ' \u00b7 invulnerable' : '') + '</div></div>'
+      : '';
+    var deposit = col.deposit
+      ? '<div class="meta-item"><div class="meta-key">Bond</div><div class="meta-val">' + escapeHtml(col.deposit) + '</div></div>'
+      : '';
 
     return '<div class="card status-' + st + ' relay-' + relay + '">'
       + '<div class="card-edge-wrap"><div class="card-edge-bg relay-' + relay + '"></div><div class="card-edge">' + edgeWord(col.chain) + '</div></div>'
@@ -415,14 +422,14 @@ function renderCards(nodes) {
       + '<div class="card-row">'
       + '<div class="card-label">' + escapeHtml(label) + '</div>'
       + '<span class="chain-tag">' + escapeHtml(col.chain || '') + '</span>'
-      + '<div class="card-addr">' + escapeHtml(col.peerId || col.name || '') + '</div>'
+      + '<div class="card-addr">' + escapeHtml(col.peerId || col.addressShort || col.name || '') + '</div>'
       + '<span class="status-badge ' + st + '">' + statusLabel(st) + '</span>'
       + '</div>'
       + '<div class="card-meta">'
       + '<div class="meta-item"><div class="meta-key">Best block</div><div class="meta-val">' + (col.best != null ? col.best.toLocaleString() : '\u2013') + '</div></div>'
       + '<div class="meta-item"><div class="meta-key">Finalized</div><div class="meta-val">' + (col.finalized != null ? col.finalized.toLocaleString() : '\u2013') + '</div></div>'
       + '<div class="meta-item"><div class="meta-key">Peers</div><div class="meta-val ' + peersCls + '">' + (col.peers != null ? col.peers : '\u2013') + '</div></div>'
-      + ttpb + upload + download + stateSize
+      + setStatus + deposit + ttpb + upload + download + stateSize
       + '<div class="meta-item"><div class="meta-key">Version</div><div class="meta-val">' + escapeHtml(col.version || '\u2013') + '</div></div>'
       + '<div class="meta-item"><div class="meta-key">Uptime</div><div class="meta-val">' + uptimeFrom(col.startupTime) + '</div></div>'
       + consec

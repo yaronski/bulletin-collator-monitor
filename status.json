@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2026-09-01T21:02:37.263Z",
+  "lastUpdated": "2026-09-01T23:59:30.756Z",
   "feed": {
     "connected": true,
-    "registrySize": 145,
+    "registrySize": 144,
     "error": null
   },
   "chains": {
@@ -12,132 +12,215 @@
       "feedError": null,
       "relay": "polkadot",
       "nodeCount": 9,
-      "bestBlock": 1628417,
-      "finalizedBlock": 1628411,
+      "bestBlock": 1630168,
+      "finalizedBlock": 1630163,
       "nodesTable": [
         {
           "name": "DPSTK",
           "peerId": "12D3KooWHPmACsPbXDo9n4qjBZqGEqJ7JLG2fvaCWNCMWyysg6vQ",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1628417,
-          "finalized": 1628411,
+          "best": 1630168,
+          "finalized": 1630163,
           "peers": 15,
-          "ttpb": 5843,
-          "stateSize": 986805900,
-          "uploadAvgBs": 26124,
-          "downloadAvgBs": 14080,
+          "ttpb": 5393,
+          "stateSize": 986804100,
+          "uploadAvgBs": 26252,
+          "downloadAvgBs": 13400,
           "stale": false
         },
         {
           "name": "ExtraCoin",
           "peerId": "12D3KooWMc7ZJ6JGiehG1H45JL69QTPivEBnzm8LihkEEFjYMRnr",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1628417,
-          "finalized": 1628411,
+          "best": 1630168,
+          "finalized": 1630163,
           "peers": 14,
-          "ttpb": 5841,
-          "stateSize": 986676540,
-          "uploadAvgBs": 20859,
-          "downloadAvgBs": 16924,
+          "ttpb": 5388,
+          "stateSize": 986849150,
+          "uploadAvgBs": 22662,
+          "downloadAvgBs": 16241,
           "stale": false
         },
         {
           "name": "Faraday",
           "peerId": "12D3KooWNy2J75qK8C4o8ooFHpLY4rPPsZcR8qNjgDuW2tvCqEWG",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1628417,
-          "finalized": 1628411,
+          "best": 1630168,
+          "finalized": 1630163,
           "peers": 15,
-          "ttpb": 5838,
-          "stateSize": 495784930,
-          "uploadAvgBs": 25003,
-          "downloadAvgBs": 14003,
+          "ttpb": 5396,
+          "stateSize": 530737800,
+          "uploadAvgBs": 26016,
+          "downloadAvgBs": 14042,
           "stale": false
         },
         {
           "name": "INTERWEB-COL1",
           "peerId": "12D3KooWLcMxWNUUNhdVq62P691VtD2iFwyD83i7SxtkGxAuUb2y",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1628417,
-          "finalized": 1628411,
+          "best": 1630168,
+          "finalized": 1630163,
           "peers": 15,
-          "ttpb": 5844,
-          "stateSize": 986749300,
-          "uploadAvgBs": 25001,
-          "downloadAvgBs": 15748,
+          "ttpb": 5389,
+          "stateSize": 986754400,
+          "uploadAvgBs": 25171,
+          "downloadAvgBs": 15372,
           "stale": false
         },
         {
           "name": "MegatronBulletin",
           "peerId": "12D3KooWHEYTsuU8mZiNuEovmCVp1g1tQBVceHDpCrc7p4VN9wZ4",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1628417,
-          "finalized": 1628411,
+          "best": 1630168,
+          "finalized": 1630163,
           "peers": 15,
-          "ttpb": 5806,
-          "stateSize": 986776400,
-          "uploadAvgBs": 18866,
-          "downloadAvgBs": 23842,
+          "ttpb": 5397,
+          "stateSize": 986944000,
+          "uploadAvgBs": 19674,
+          "downloadAvgBs": 24725,
           "stale": false
         },
         {
           "name": "PN-Bulletin-01",
           "peerId": "12D3KooWBtEY3wxRxF7VgJtu8ottRSZxr5CxS4n2itHpmsZK8K5n",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1628417,
-          "finalized": 1628411,
+          "best": 1630168,
+          "finalized": 1630163,
           "peers": 14,
-          "ttpb": 5845,
+          "ttpb": 5395,
           "stateSize": 0,
-          "uploadAvgBs": 21363,
-          "downloadAvgBs": 24283,
+          "uploadAvgBs": 21935,
+          "downloadAvgBs": 24958,
           "stale": false
         },
         {
           "name": "PN-Bulletin-Boot",
           "peerId": "12D3KooWG1DYbATkDZVecTrnzmTiDiXVpbvFL3fn8iUiCEuqQz9c",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1628417,
-          "finalized": 1628411,
+          "best": 1630168,
+          "finalized": 1630163,
           "peers": 14,
-          "ttpb": 5844,
-          "stateSize": 986884540,
-          "uploadAvgBs": 17085,
-          "downloadAvgBs": 20534,
+          "ttpb": 5391,
+          "stateSize": 986883140,
+          "uploadAvgBs": 18462,
+          "downloadAvgBs": 20727,
           "stale": false
         },
         {
           "name": "Polkadotters",
           "peerId": "12D3KooWEKjYGD5a3veYTcV3s7rkvXfi9gxYbZEbBCk2NtqH8Lp2",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1628417,
-          "finalized": 1628411,
+          "best": 1630168,
+          "finalized": 1630163,
           "peers": 15,
-          "ttpb": 5842,
-          "stateSize": null,
-          "uploadAvgBs": null,
-          "downloadAvgBs": null,
+          "ttpb": 5392,
+          "stateSize": 986841100,
+          "uploadAvgBs": 13421,
+          "downloadAvgBs": 27848,
           "stale": false
         },
         {
           "name": "Simply Staking: Bulletin Node CA",
           "peerId": "12D3KooWH7GPMht12HuqCrDcS57goPwAko3zeFMs9taC49wHWPun",
           "version": "1.24.1-8ae9775dc43",
-          "best": 1628417,
-          "finalized": 1628411,
+          "best": 1630168,
+          "finalized": 1630163,
           "peers": 15,
-          "ttpb": 5843,
-          "stateSize": 986729540,
-          "uploadAvgBs": 13815,
-          "downloadAvgBs": 25595,
+          "ttpb": 5387,
+          "stateSize": 986721400,
+          "uploadAvgBs": 14827,
+          "downloadAvgBs": 25696,
           "stale": false
         }
       ]
+    },
+    "Kusama People": {
+      "genesis": null,
+      "relay": "kusama",
+      "rpcOk": true,
+      "isRelay": false,
+      "activeSetSize": 15,
+      "candidateSetSize": null,
+      "invulnerableSetSize": 10,
+      "activeSet": [
+        "CbLd7BdUr8DqD4TciR1kH6w12bbHBCW9n2MHGCtbxq4U5ty",
+        "CdW8izFcLeicL3zZUQaC3a39AGeNSTgc9Jb5E5sjREPryA2",
+        "CuLgnS17KwfweeoN9y59YrhDG4pekfiY8qxieDaVTcVCjuP",
+        "DGHxPHM19z1C6tvRhf1tBARB38uV8tudHQsSm2a3bonuSU4",
+        "E8X4LxU9zEiNVAyM95ERDeomMmwwqn7RBCuRMEZCfgFm3J1",
+        "Et9M3rrA7H2kHQEGRXHxufcp9HTEmFirMWtKHvjoJ85r1C9",
+        "F7TKjT2EBVqfquyN5G4s4FLSxHM7nR3WbdRAgxQLeJYVG53",
+        "GHW6TB6awErp2VaySKN6dLdjmzKET1LzCKMMTYMnGMUXs7n",
+        "HNrgbuMxf7VLwsMd6YjnNQM6fc7VVsaoNVaMYTCCfK3TRWJ",
+        "HWBh4YQ69iopm9G8x938dEivMENXeHaHZraannpg4U4aib2",
+        "HmatizNhXrZtXwQK2LfntvjCy3x1EuKs1WnRQ6CP3KkNfmA",
+        "J11Rp4mjz3vRb2DL51HqRGRjhuEQRyXgtuFskebXb8zMZ9s",
+        "DtuntvQBh9vajFTnd42aTTCiuCyY3ep6EVwhhPji2ejyyhW",
+        "HLsPiB2amYFPFYMcYqKxGFLgDUVd4UP1kdA4QdZsH3e91LP",
+        "DV7b5AL9zNbsnQ8CWCwvw2tzc3pz74EVDLGQdNU1tujA2L5"
+      ]
+    },
+    "Polkadot Asset Hub": {
+      "genesis": null,
+      "relay": "polkadot",
+      "rpcOk": true,
+      "isRelay": false,
+      "activeSetSize": 14,
+      "candidateSetSize": null,
+      "invulnerableSetSize": 11,
+      "activeSet": [
+        "16WWmr2Xqgy5fna35GsNHXMU7vDBM12gzHCFGibQjSmKpAN",
+        "1gkGXWr2wr1CqYCKqGHRRsBhL9iCmTy7ubwVgeys4m4tJwQ",
+        "12ixt2xmCJKuLXjM3gh1SY7C3aj4gBoBUqExTBTGhLCSATFw",
+        "14T3MFxNa4d7pyjRAdKU6tLC8sfde1HBLGNMHKCMFqjWRrrM",
+        "14icei1ZMoG9QtKBFDk4y1eMR756q2TREuRAi2BanJ9MJVPL",
+        "14wQoaBqk718MgNxp3qdpqHnEgmTTmTkcVnYuxMWWvYr3DXb",
+        "14xSXydBVvuMMaNduDXwWcckt3BziSB8Sa7o34Jt9z2aMGxX",
+        "15MV2nX6BEoiBz8Ua2xNta19sVBKT7kiw2MEHdu2Jd9a4VaC",
+        "15X2eHehrexKqz6Bs6fQTjptP2ndn39eYdQTeREVeRk32p54",
+        "15dikXxF1QwijxxU7wZBFmHy7HeCotHXa1LxzVu44KVKXCRC",
+        "167xwLzY4z3uNBMQSdDJmPnLgPKBY1SRsvQXbyaeHcnwd4um",
+        "13C7Ssy9QNJk515SFezaKMfhMRFrRcZWBhXA3oDq1AuKVds5",
+        "13xAUHVDyG1v9LLHYtMm7XZFyKNVxoj47oWV431XQ9kjXN38",
+        "13TUNfEBCi6xw5ZQgxYAwbCsALSuDfqDWMfbHigZNgncuV6v"
+      ]
+    },
+    "Kusama Asset Hub": {
+      "genesis": null,
+      "relay": "kusama",
+      "rpcOk": true,
+      "isRelay": false,
+      "activeSetSize": 14,
+      "candidateSetSize": null,
+      "invulnerableSetSize": 11,
+      "activeSet": [
+        "CbLdvHtKPVr1bvt7poBKwJsQUokfjC4kqoMkjeyCDtFs8wQ",
+        "E5G5qLNBF7nwhemokqNrNwUCQ7oHrLsBVjSc7XhTdRq8672",
+        "EPGHRDFaBbQz4uF8DgnuScxYp4rvvtpL5MTed7VvGprNQmm",
+        "EPk1wv1TvVFfsiG73YLuLAtGacfPmojyJKvmifobBzUTxFv",
+        "Eicei1RVHvqHBPJAY2fZpLy2KtCMjY7Kwjo3svjmGLH7FmT",
+        "Et9M3rrA7H2kHQEGRXHxufcp9HTEmFirMWtKHvjoJ85r1C9",
+        "H1tAQMm3eizGcmpAhL9aA9gR844kZpQfkU7pkmMiLx9jSzE",
+        "HPUEzi4v3YJmhBfSbcGEFFiNKPAGVnGkfDiUzBNTR7j1CxT",
+        "HWyLYmpW68JGJYoVJcot6JQ1CJbtUQeTdxfY1kUTsvGCB1r",
+        "J11Rp4mjz3vRb2DL51HqRGRjhuEQRyXgtuFskebXb8zMZ9s",
+        "JL21EURyqQxJk9inVW7iuexJNzzuV7HpZJVxQrY8BzwFiTJ",
+        "HmatizNhXrZtXwQK2LfntvjCy3x1EuKs1WnRQ6CP3KkNfmA",
+        "DtuntvQBh9vajFTnd42aTTCiuCyY3ep6EVwhhPji2ejyyhW",
+        "DV7b5AL9zNbsnQ8CWCwvw2tzc3pz74EVDLGQdNU1tujA2L5"
+      ]
+    },
+    "Encointer Network": {
+      "genesis": null,
+      "relay": "other",
+      "rpcError": "no RPC endpoint configured for \"Encointer Network\" (add rpcUrls in config)"
     }
   },
   "nodes": {
     "Polkadot Bulletin:12D3KooWMc…MRnr": {
       "peerId": "12D3KooWMc7ZJ6JGiehG1H45JL69QTPivEBnzm8LihkEEFjYMRnr",
+      "addressShort": null,
+      "hasAddress": false,
       "matchedBy": "peerId",
       "label": "ExtraCoin",
       "chain": "Polkadot Bulletin",
@@ -146,308 +229,196 @@
       "version": "1.24.1-8ae9775dc43",
       "impl": "polkadot-parachain",
       "name": "ExtraCoin",
-      "best": 1628417,
-      "finalized": 1628411,
+      "best": 1630168,
+      "finalized": 1630163,
       "peers": 14,
-      "ttpb": 5841,
-      "stateSize": 986676540,
-      "uploadAvgBs": 20859,
-      "downloadAvgBs": 16924,
+      "ttpb": 5388,
+      "stateSize": 986849150,
+      "uploadAvgBs": 22662,
+      "downloadAvgBs": 16241,
       "startupTime": 1786366863953,
-      "lastBlockAt": "2026-09-01T21:02:36.443Z",
+      "lastBlockAt": "2026-09-01T23:59:24.676Z",
+      "chainStatus": null,
+      "invulnerable": null,
+      "deposit": null,
       "consecutiveOffline": 0,
+      "consecutiveMissing": 0,
       "alertedOffline": false,
+      "alertedRecovery": false,
+      "alertedMissing": false,
       "statusText": "online",
-      "lastChecked": "2026-09-01T21:02:37.263Z",
+      "lastChecked": "2026-09-01T23:59:30.756Z",
       "lastError": null,
       "history": [
         {
-          "ts": "2026-08-23T00:00:58.402Z",
-          "best": 1487836
-        },
+          "ts": "2026-09-01T23:59:30.756Z",
+          "best": 1630168
+        }
+      ]
+    },
+    "Kusama People:CbLd7B…U5ty": {
+      "peerId": null,
+      "addressShort": "CbLd7B…U5ty",
+      "hasAddress": true,
+      "matchedBy": null,
+      "label": "KSM People addr test (first validator)",
+      "chain": "Kusama People",
+      "isOnline": false,
+      "stale": null,
+      "version": null,
+      "impl": null,
+      "name": null,
+      "best": null,
+      "finalized": null,
+      "peers": null,
+      "ttpb": null,
+      "stateSize": null,
+      "uploadAvgBs": null,
+      "downloadAvgBs": null,
+      "startupTime": null,
+      "lastBlockAt": null,
+      "chainStatus": "active",
+      "invulnerable": true,
+      "deposit": null,
+      "consecutiveOffline": 0,
+      "consecutiveMissing": 0,
+      "alertedOffline": false,
+      "alertedRecovery": false,
+      "alertedMissing": false,
+      "statusText": "online",
+      "lastChecked": "2026-09-01T23:59:30.756Z",
+      "lastError": null,
+      "history": [
         {
-          "ts": "2026-08-23T00:38:18.023Z",
-          "best": 1488206
-        },
-        {
-          "ts": "2026-08-23T02:21:46.778Z",
-          "best": 1489232
-        },
-        {
-          "ts": "2026-08-23T03:44:40.528Z",
-          "best": 1490053
-        },
-        {
-          "ts": "2026-08-23T04:30:43.359Z",
-          "best": 1490511
-        },
-        {
-          "ts": "2026-08-23T05:23:45.174Z",
-          "best": 1491038
-        },
-        {
-          "ts": "2026-08-23T06:24:59.472Z",
-          "best": 1491647
-        },
-        {
-          "ts": "2026-08-23T07:28:28.603Z",
-          "best": 1492281
-        },
-        {
-          "ts": "2026-08-23T08:21:11.879Z",
-          "best": 1492800
-        },
-        {
-          "ts": "2026-08-23T10:38:56.316Z",
-          "best": 1494161
-        },
-        {
-          "ts": "2026-08-23T13:02:04.595Z",
-          "best": 1495568
-        },
-        {
-          "ts": "2026-08-23T14:38:05.667Z",
-          "best": 1496522
-        },
-        {
-          "ts": "2026-08-23T16:42:21.998Z",
-          "best": 1497743
-        },
-        {
-          "ts": "2026-08-23T18:47:04.556Z",
-          "best": 1498976
-        },
-        {
-          "ts": "2026-08-23T20:39:16.514Z",
-          "best": 1500078
-        },
-        {
-          "ts": "2026-08-23T22:37:50.982Z",
-          "best": 1501255
-        },
-        {
-          "ts": "2026-08-24T01:57:50.516Z",
-          "best": 1503240
-        },
-        {
-          "ts": "2026-08-24T03:17:40.221Z",
-          "best": 1504035
-        },
-        {
-          "ts": "2026-08-24T05:00:43.895Z",
-          "best": 1505062
-        },
-        {
-          "ts": "2026-08-24T07:19:46.949Z",
+          "ts": "2026-09-01T23:59:30.756Z",
           "best": null
-        },
+        }
+      ]
+    },
+    "Polkadot Asset Hub:16WWmr…KpAN": {
+      "peerId": null,
+      "addressShort": "16WWmr…KpAN",
+      "hasAddress": true,
+      "matchedBy": null,
+      "label": "DOT AH addr test (first validator)",
+      "chain": "Polkadot Asset Hub",
+      "isOnline": false,
+      "stale": null,
+      "version": null,
+      "impl": null,
+      "name": null,
+      "best": null,
+      "finalized": null,
+      "peers": null,
+      "ttpb": null,
+      "stateSize": null,
+      "uploadAvgBs": null,
+      "downloadAvgBs": null,
+      "startupTime": null,
+      "lastBlockAt": null,
+      "chainStatus": "active",
+      "invulnerable": true,
+      "deposit": null,
+      "consecutiveOffline": 0,
+      "consecutiveMissing": 0,
+      "alertedOffline": false,
+      "alertedRecovery": false,
+      "alertedMissing": false,
+      "statusText": "online",
+      "lastChecked": "2026-09-01T23:59:30.756Z",
+      "lastError": null,
+      "history": [
         {
-          "ts": "2026-08-24T09:03:53.378Z",
-          "best": 1507468
-        },
+          "ts": "2026-09-01T23:59:30.756Z",
+          "best": null
+        }
+      ]
+    },
+    "Kusama Asset Hub:5Grwva…utQY": {
+      "peerId": null,
+      "addressShort": "5Grwva…utQY",
+      "hasAddress": true,
+      "matchedBy": null,
+      "label": "Ghost address (Alice, not a collator)",
+      "chain": "Kusama Asset Hub",
+      "isOnline": false,
+      "stale": null,
+      "version": null,
+      "impl": null,
+      "name": null,
+      "best": null,
+      "finalized": null,
+      "peers": null,
+      "ttpb": null,
+      "stateSize": null,
+      "uploadAvgBs": null,
+      "downloadAvgBs": null,
+      "startupTime": null,
+      "lastBlockAt": null,
+      "chainStatus": "missing",
+      "invulnerable": null,
+      "deposit": null,
+      "consecutiveOffline": 0,
+      "consecutiveMissing": 1,
+      "alertedOffline": false,
+      "alertedRecovery": false,
+      "alertedMissing": true,
+      "statusText": "offline",
+      "lastChecked": "2026-09-01T23:59:30.756Z",
+      "lastError": null,
+      "history": [
         {
-          "ts": "2026-08-24T10:52:48.545Z",
-          "best": 1508545
-        },
+          "ts": "2026-09-01T23:59:30.756Z",
+          "best": null
+        }
+      ]
+    },
+    "Kusama People:INVALI…ADDR": {
+      "label": "Bad address",
+      "chain": "Kusama People",
+      "peerId": null,
+      "addressShort": "INVALI…ADDR",
+      "statusText": "error",
+      "lastError": "invalid address: bad base58 char",
+      "lastChecked": "2026-09-01T23:59:30.756Z",
+      "history": []
+    },
+    "Encointer Network:CbLd7B…U5ty": {
+      "peerId": null,
+      "addressShort": "CbLd7B…U5ty",
+      "hasAddress": true,
+      "matchedBy": null,
+      "label": "Chain ohne RPC",
+      "chain": "Encointer Network",
+      "isOnline": false,
+      "stale": null,
+      "version": null,
+      "impl": null,
+      "name": null,
+      "best": null,
+      "finalized": null,
+      "peers": null,
+      "ttpb": null,
+      "stateSize": null,
+      "uploadAvgBs": null,
+      "downloadAvgBs": null,
+      "startupTime": null,
+      "lastBlockAt": null,
+      "chainStatus": null,
+      "invulnerable": null,
+      "deposit": null,
+      "consecutiveOffline": 0,
+      "consecutiveMissing": 0,
+      "alertedOffline": false,
+      "alertedRecovery": false,
+      "alertedMissing": false,
+      "statusText": "error",
+      "lastChecked": "2026-09-01T23:59:30.756Z",
+      "lastError": "no RPC endpoint configured for \"Encointer Network\" (add rpcUrls in config)",
+      "history": [
         {
-          "ts": "2026-08-24T13:12:22.800Z",
-          "best": 1509924
-        },
-        {
-          "ts": "2026-08-24T14:58:22.838Z",
-          "best": 1510976
-        },
-        {
-          "ts": "2026-08-24T16:55:23.293Z",
-          "best": 1512138
-        },
-        {
-          "ts": "2026-08-24T18:58:20.648Z",
-          "best": 1513363
-        },
-        {
-          "ts": "2026-08-24T20:46:16.032Z",
-          "best": 1514426
-        },
-        {
-          "ts": "2026-08-24T22:42:11.894Z",
-          "best": 1515576
-        },
-        {
-          "ts": "2026-08-25T01:51:31.949Z",
-          "best": 1517447
-        },
-        {
-          "ts": "2026-08-25T03:12:50.586Z",
-          "best": 1518253
-        },
-        {
-          "ts": "2026-08-25T04:53:59.026Z",
-          "best": 1519257
-        },
-        {
-          "ts": "2026-08-25T07:07:19.739Z",
-          "best": 1520557
-        },
-        {
-          "ts": "2026-08-25T08:58:55.899Z",
-          "best": 1521659
-        },
-        {
-          "ts": "2026-08-25T10:47:52.760Z",
-          "best": 1522736
-        },
-        {
-          "ts": "2026-08-25T13:10:01.348Z",
-          "best": 1524141
-        },
-        {
-          "ts": "2026-08-25T15:01:15.442Z",
-          "best": 1525237
-        },
-        {
-          "ts": "2026-08-25T16:54:28.517Z",
-          "best": 1526356
-        },
-        {
-          "ts": "2026-08-25T18:56:55.776Z",
-          "best": 1527549
-        },
-        {
-          "ts": "2026-08-25T20:44:26.697Z",
-          "best": 1528601
-        },
-        {
-          "ts": "2026-08-25T22:42:43.465Z",
-          "best": 1529772
-        },
-        {
-          "ts": "2026-08-26T01:57:27.847Z",
-          "best": 1531691
-        },
-        {
-          "ts": "2026-08-26T03:19:36.494Z",
-          "best": 1532502
-        },
-        {
-          "ts": "2026-08-26T04:55:25.550Z",
-          "best": 1533446
-        },
-        {
-          "ts": "2026-08-26T07:07:55.679Z",
-          "best": 1534764
-        },
-        {
-          "ts": "2026-08-26T09:00:50.977Z",
-          "best": 1535878
-        },
-        {
-          "ts": "2026-08-26T10:50:49.267Z",
-          "best": 1536972
-        },
-        {
-          "ts": "2026-08-26T13:15:05.638Z",
-          "best": 1538387
-        },
-        {
-          "ts": "2026-08-26T15:00:00.221Z",
-          "best": 1539423
-        },
-        {
-          "ts": "2026-08-26T17:00:06.438Z",
-          "best": 1540611
-        },
-        {
-          "ts": "2026-08-26T20:04:11.498Z",
-          "best": 1542427
-        },
-        {
-          "ts": "2026-08-26T23:26:08.505Z",
-          "best": 1544415
-        },
-        {
-          "ts": "2026-08-27T09:32:55.179Z",
-          "best": 1550413
-        },
-        {
-          "ts": "2026-08-27T20:24:04.088Z",
-          "best": 1556853
-        },
-        {
-          "ts": "2026-08-28T06:09:20.147Z",
-          "best": 1562647
-        },
-        {
-          "ts": "2026-08-28T18:40:30.767Z",
-          "best": 1570028
-        },
-        {
-          "ts": "2026-08-29T02:52:32.770Z",
-          "best": 1574891
-        },
-        {
-          "ts": "2026-08-29T11:04:51.620Z",
-          "best": 1579772
-        },
-        {
-          "ts": "2026-08-29T16:44:48.032Z",
-          "best": 1583124
-        },
-        {
-          "ts": "2026-08-29T20:56:41.942Z",
-          "best": 1585608
-        },
-        {
-          "ts": "2026-08-30T00:14:20.632Z",
-          "best": 1587569
-        },
-        {
-          "ts": "2026-08-30T08:19:47.642Z",
-          "best": 1592366
-        },
-        {
-          "ts": "2026-08-30T14:53:24.209Z",
-          "best": 1596264
-        },
-        {
-          "ts": "2026-08-30T19:21:51.854Z",
-          "best": 1598926
-        },
-        {
-          "ts": "2026-08-30T22:45:24.473Z",
-          "best": 1600939
-        },
-        {
-          "ts": "2026-08-31T05:26:33.313Z",
-          "best": 1604912
-        },
-        {
-          "ts": "2026-08-31T13:37:24.802Z",
-          "best": 1609756
-        },
-        {
-          "ts": "2026-08-31T20:02:29.883Z",
-          "best": 1613560
-        },
-        {
-          "ts": "2026-08-31T23:49:55.752Z",
-          "best": 1615815
-        },
-        {
-          "ts": "2026-09-01T05:01:04.670Z",
-          "best": 1618893
-        },
-        {
-          "ts": "2026-09-01T11:38:14.244Z",
-          "best": 1622834
-        },
-        {
-          "ts": "2026-09-01T16:36:24.746Z",
-          "best": 1625779
-        },
-        {
-          "ts": "2026-09-01T21:02:37.263Z",
-          "best": 1628417
+          "ts": "2026-09-01T23:59:30.756Z",
+          "best": null
         }
       ]
     }

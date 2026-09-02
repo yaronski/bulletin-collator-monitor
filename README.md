@@ -2,7 +2,12 @@
 
 Tracks whether your collators/nodes are visible on the official [Polkadot Telemetry](https://telemetry.polkadot.io/) — without needing access to the nodes themselves. Works for **any chain in the telemetry registry**: Polkadot Bulletin, Kusama People, Polkadot Asset Hub, the relays themselves, and 150+ more.
 
-Connects to `wss://feed.telemetry.polkadot.io/feed`, discovers all chains from the live registry, subscribes to every chain that has configured nodes (one WSS connection per chain, in parallel), and matches your nodes by **libp2p PeerID** (recommended — stable across restarts) or by **telemetry display name** (exact case-insensitive match, with unambiguous-substring fallback). Runs as a GitHub Actions cron every 2 hours.
+Two data sources, one dashboard:
+
+1. **Telemetry** — connects to `wss://feed.telemetry.polkadot.io/feed`, discovers all chains from the live registry and subscribes to every chain that has configured nodes (one WSS connection per chain, in parallel). Matches by **libp2p PeerID** (recommended — stable across restarts) or **telemetry display name** (exact case-insensitive, unambiguous-substring fallback). Answers: *is my node running and visible?*
+2. **On-chain** — reads `Session.Validators`, `CollatorSelection.Candidates` and `CollatorSelection.Invulnerables` via `state_getStorage` on public RPC endpoints (no `state_call` needed). Matches your **SS58 address** in any format — Kusama- and Polkadot-style both decode to the same 32-byte account, so either prefix works on any chain. Answers: *is my collator in the active set / still a candidate?*
+
+Runs as a GitHub Actions cron every 2 hours.
 
 **Privacy**: Node PeerIDs are stored in GitHub Secrets, not in the repo. The public `status.json` only shows truncated PeerIDs (`12D3KooW…MRnr`).
 
@@ -34,7 +39,18 @@ A node counts as **offline** only if it does not appear in its chain's feed at t
 | `offline` | Not in the feed — alerts on the first missed check |
 | `error` | Chain feed unreachable / chain unknown — offline counting paused |
 
-> **Why PeerID instead of SS58 address?** The telemetry feed no longer carries validator/authority addresses (the GRANDPA authority-set messages are not emitted by the current backend — verified against Polkadot, Kusama and the system parachains), so there is nothing to match an address against. The libp2p PeerID is the only stable identity in the feed; display names work too but are operator-chosen and not enforced unique. SS58 (Kusama- or Polkadot-style) address support would require joining this with on-chain queries (e.g. `session.validators` via RPC) — not implemented.
+> **Telemetry carries no addresses** (the GRANDPA authority-set messages are not emitted by the current backend — verified against Polkadot, Kusama and the system parachains), so address monitoring goes on-chain instead: the checker reads the active/candidate sets directly from the chain's storage over public RPC. PeerID remains the right identity for telemetry; display names are operator-chosen and not enforced unique.
+
+**On-chain semantics** (per watched address):
+
+| `chainStatus` | Meaning | Alert |
+|---------------|---------|-------|
+| `active` | In `Session.Validators` — currently authoring blocks | — |
+| `standby` | Candidate/invulnerable, not in this session's active set (normal rotation) | — |
+| `missing` | Not in validators, candidates or invulnerables — kicked/unbonded | after N consecutive checks |
+| (RPC error) | Endpoint unreachable | no alert (offline counting paused) |
+
+Relay chains (Polkadot/Kusama): the set is era-based and huge (600/700), so addresses there are display-only — `active`/`standby`, no missing-alerts. System parachains: `missing` means your bond left the candidate list — that alerts.
 
 ## Dashboard
 
@@ -89,8 +105,8 @@ Go to **Settings → Secrets and variables → Actions** and add these repositor
     },
     {
       "chain": "Polkadot Asset Hub",
-      "peerId": "12D3KooW…full peer id…",
-      "label": "AH node"
+      "address": "15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5",
+      "label": "My AH collator (by address)"
     }
   ],
   "consecutiveOfflineChecksBeforeAlert": 2
@@ -98,8 +114,9 @@ Go to **Settings → Secrets and variables → Actions** and add these repositor
 ```
 
 - `chain` — telemetry chain label (exact, unique substring, or genesis hash)
-- `peerId` — recommended, stable across node restarts
-- `name` — alternative matcher: exact case-insensitive telemetry display name; falls back to substring if exactly one node matches
+- `peerId` — recommended for telemetry, stable across node restarts
+- `name` — alternative telemetry matcher: exact case-insensitive display name; falls back to substring if exactly one node matches
+- `address` — SS58 address (any prefix — Kusama `C…`/`F…`/`G…`/`H…` and Polkadot `1…`/`5…` styles both work; decoded and matched by the raw account). Can be combined with `peerId`/`name` in one entry for full visibility, or used alone
 - `label` — what the dashboard card shows
 - `consecutiveOfflineChecksBeforeAlert` — default 1: alert fires on the first missed check, so max latency = one schedule interval (2 h). Raise it to damp single-run hiccups (e.g. telemetry restarts).
 
@@ -135,6 +152,7 @@ The scheduled workflow runs **every 2 hours** (12 runs/day, ~6 min each ≈ 72 m
 | `status.json` | Auto-updated by CI. PeerIDs are truncated for privacy. |
 | `index.html` | Dashboard. Fetches `status.json` every 5 min. |
 | `scripts/check.mjs` | Node.js checker. Runs in GitHub Actions. No dependencies. |
+| `rpcUrls` (config) | Per-chain RPC endpoints. Defaults: Polkadot, Kusama, both Asset Hubs, both People, both Coretime chains. Bulletin has no public RPC — telemetry-only there. |
 | `.github/workflows/monitor.yml` | Cron schedule + git-push logic. |
 
 ## Local development

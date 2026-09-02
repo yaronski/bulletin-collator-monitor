@@ -1,5 +1,5 @@
 {
-  "_comment": "Multi-chain collator monitor. Nodes are identified by libp2p PeerID (recommended, stable across restarts) or by exact telemetry display name. Chains are resolved by label against the live telemetry registry (unique substring works too), so 'Polkadot Bulletin', 'Kusama People', 'Polkadot Asset Hub', 'Kusama', 'Polkadot' etc. all work.",
+  "_comment": "Multi-chain collator monitor. Nodes are identified by libp2p PeerID (recommended, stable across restarts), by exact telemetry display name, or by SS58 address (any prefix — Kusama- and Polkadot-style both work; address monitoring checks Session.Validators / CollatorSelection.Candidates / Invulnerables on-chain). Chains are resolved by label against the live telemetry registry (unique substring works too).",
   "feedUrl": "wss://feed.telemetry.polkadot.io/feed",
   "nodes": [
     {
