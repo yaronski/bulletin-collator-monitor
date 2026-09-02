@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: collator-monitor
+  cancel-in-progress: false
+
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -36,5 +40,11 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "chore: update status.json [skip ci]"
-            git push
+            # retry with rebase: main may have moved while this run was listening (manual pushes, pages commits)
+            for i in 1 2 3 4 5; do
+              if git push; then break; fi
+              echo "push rejected (attempt $i) — rebase and retry"
+              git pull --rebase origin main
+              sleep $((i * 5))
+            done
           fi
