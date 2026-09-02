@@ -6,6 +6,18 @@
       "chain": "Polkadot Bulletin",
       "peerId": "12D3KooWMc7ZJ6JGiehG1H45JL69QTPivEBnzm8LihkEEFjYMRnr",
       "label": "ExtraCoin"
+    },
+    {
+      "chain": "Kusama People",
+      "address": "EXTrPKwb8ovrnaQMsBsf3nDZu4A4YdHgvNedAiY5DFyM3zB",
+      "label": "ExtraCoin (People, upcoming)",
+      "alerts": false
+    },
+    {
+      "chain": "Polkadot Asset Hub",
+      "address": "12EXTrrfo9LTbK7ToB5XekXJysjoWCg3SyqgAMaFpXyXHQUF",
+      "label": "ExtraCoin (AssetHub, upcoming)",
+      "alerts": false
     }
   ],
   "consecutiveOfflineChecksBeforeAlert": 1,

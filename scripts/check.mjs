@@ -468,6 +468,7 @@ async function main() {
     const keyBase = cfg.peerId ? shortPeer(cfg.peerId) : cfg.address ? shortAddr(cfg.address) : cfg.name || '?';
     const key = `${chainLabel || '?'}:${keyBase}`;
     const p = prev.nodes?.[key] ?? {};
+    const alertsOn = cfg.alerts !== false;
     const chainInfo = chainLabel ? next.chains[chainLabel] : null;
 
     // address errors (bad ss58)
@@ -551,25 +552,25 @@ async function main() {
     if (rpcErr) console.log(`    ✗ on-chain: ${rpcErr}`);
     if (chainStatus) console.log(`    on-chain: ${chainStatus}${invulnerable ? ' (invulnerable)' : ''}${deposit != null ? ` deposit=${deposit}` : ''}`);
 
-    if (triggerOfflineAlert) {
+    if (alertsOn && triggerOfflineAlert) {
       await sendTelegram(
         `🚨 <b>Collator offline</b>\n\n<b>${displayLabel}</b>\n<code>${cfg.peerId || cfg.name}</code>\n` +
         `Chain: ${chainLabel}\nSeen offline for ${consecutiveOffline} consecutive checks.`
       );
     }
-    if (triggerRecoveryAlert) {
+    if (alertsOn && triggerRecoveryAlert) {
       await sendTelegram(
         `✅ <b>Collator back online</b>\n\n<b>${displayLabel}</b>\n<code>${cfg.peerId || snap.peerId}</code>\n` +
         `Chain: ${chainLabel} · Best block: ${snap.best} · Peers: ${snap.peers}`
       );
     }
-    if (triggerMissingAlert) {
+    if (alertsOn && triggerMissingAlert) {
       await sendTelegram(
         `🚨 <b>Collator dropped from candidate set</b>\n\n<b>${displayLabel}</b>\n<code>${cfg.address}</code>\n` +
         `Chain: ${chainLabel}\nNot in Session.Validators, CollatorSelection.Candidates or Invulnerables for ${consecutiveMissing} consecutive checks.`
       );
     }
-    if (triggerMissingRecovery) {
+    if (alertsOn && triggerMissingRecovery) {
       await sendTelegram(
         `✅ <b>Collator back in selection</b>\n\n<b>${displayLabel}</b>\n<code>${cfg.address}</code>\n` +
         `Chain: ${chainLabel} · Status: ${chainStatus}`
@@ -579,6 +580,7 @@ async function main() {
     next.nodes[key] = {
       peerId: cfg.peerId || snap?.peerId || p.peerId || null,
       addressShort: cfg.address ? shortAddr(cfg.address) : null,
+      address: cfg.address || null,
       hasAddress: !!cfg._raw,
       matchedBy: how !== 'none' ? how : null,
       label: displayLabel,
@@ -602,9 +604,9 @@ async function main() {
       deposit: deposit != null ? deposit.toString() : null,
       consecutiveOffline,
       consecutiveMissing,
-      alertedOffline: telemetryOffline ? (triggerOfflineAlert || wasAlertedOffline) : false,
+      alertedOffline: alertsOn && telemetryOffline ? (triggerOfflineAlert || wasAlertedOffline) : false,
       alertedRecovery: triggerRecoveryAlert ? true : (p.alertedRecovery && snap ? true : false),
-      alertedMissing: addrMissing ? (triggerMissingAlert || wasAlertedMissing) : false,
+      alertedMissing: alertsOn && addrMissing ? (triggerMissingAlert || wasAlertedMissing) : false,
       statusText,
       lastChecked: now,
       lastError: rpcErr || telErr || (!telOk && !cfg._raw ? 'chain feed unhealthy' : null),
