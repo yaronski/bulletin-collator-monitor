@@ -44,7 +44,12 @@ jobs:
             for i in 1 2 3 4 5; do
               if git push; then break; fi
               echo "push rejected (attempt $i) — rebase and retry"
-              git pull --rebase origin main
+              if ! git pull --rebase origin main; then
+                # status.json conflict: the freshly generated file wins
+                git checkout --theirs status.json
+                git add status.json
+                git -c core.editor=true rebase --continue
+              fi
               sleep $((i * 5))
             done
           fi
