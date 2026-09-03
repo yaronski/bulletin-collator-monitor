@@ -333,7 +333,7 @@ var TOOLTIPS = {
   stateSize: 'Size of the node\'s state cache (pruned) in memory.',
   upload: 'Average network upload while the check window ran.',
   download: 'Average network download while the check window ran.',
-  spark: 'Best block height at each check (one point per workflow run, ~2 h apart). With only a few checks recorded the line is short and straight; it fills in over time. Gaps or flat sections would mean missed checks or a stuck node.'
+  spark: 'One bar per check interval: how many blocks the node produced/imported between two consecutive checks (~2 h apart). Green = normal progress (similar heights = steady production), amber = zero blocks in that window (node stuck or offline during it), red = best block went DOWN (node restarted on a shorter chain). Hover a bar for exact numbers.'
 };
 
 function fmt(iso) {
@@ -448,30 +448,31 @@ function sparklineHtml(history) {
   if (!history || history.length < 2) return '';
   var pts = history.filter(function(h) { return h.best != null; }).map(function(h) { return { ts: new Date(h.ts).getTime(), best: h.best }; });
   if (pts.length < 2) return '';
-  var W = 600, H = 36, PAD = 2;
-  var minB = Math.min.apply(null, pts.map(function(p) { return p.best; }));
-  var maxB = Math.max.apply(null, pts.map(function(p) { return p.best; }));
-  var minT = pts[0].ts, maxT = pts[pts.length-1].ts;
-  if (maxT === minT) return '';
-  var span = maxB - minB;
-  var path = pts.map(function(p, i) {
-    var x = PAD + ((p.ts - minT) / (maxT - minT)) * (W - 2*PAD);
-    var y = span === 0 ? H/2 : H - PAD - ((p.best - minB) / span) * (H - 2*PAD);
-    return (i === 0 ? 'M' : 'L') + x.toFixed(1) + ' ' + y.toFixed(1);
-  }).join(' ');
-  var spanTxt = span > 0 ? '+' + span.toLocaleString('en-US') + ' blocks' : 'no progress';
-  var durH = Math.round((maxT - minT) / 3600000);
-  var circles = pts.map(function(p) {
-    var x = PAD + ((p.ts - minT) / (maxT - minT)) * (W - 2*PAD);
-    var y = span === 0 ? H/2 : H - PAD - ((p.best - minB) / span) * (H - 2*PAD);
-    return '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="2.5" fill="#4ade80"><title>' + p.best.toLocaleString('en-US') + ' \u00b7 ' + new Date(p.ts).toLocaleString() + '</title></circle>';
+  // one bar per check interval: blocks produced between consecutive checks
+  var bars = [];
+  for (var i = 1; i < pts.length; i++) {
+    var delta = pts[i].best - pts[i-1].best;
+    var gapH = Math.max(0.1, (pts[i].ts - pts[i-1].ts) / 3600000);
+    bars.push({ delta: delta, perH: delta / gapH, gapH: gapH, ts: pts[i].ts });
+  }
+  var W = 600, H = 40, PAD = 3;
+  var maxAbs = Math.max.apply(null, bars.map(function(b) { return Math.abs(b.delta); })) || 1;
+  var bw = (W - 2 * PAD) / bars.length;
+  var rects = bars.map(function(b, i) {
+    var hPct = Math.abs(b.delta) / maxAbs;
+    var h = Math.max(2, hPct * (H - 8));
+    var x = PAD + i * bw;
+    var stalled = b.delta === 0;
+    var dropped = b.delta < 0;
+    var fill = stalled ? '#78350f' : dropped ? '#991b1b' : '#4ade80';
+    return '<rect x="' + x.toFixed(1) + '" y="' + (H - PAD - h).toFixed(1) + '" width="' + Math.max(1, bw - 1.5).toFixed(1) + '" height="' + h.toFixed(1) + '" rx="1" fill="' + fill + '">'
+      + '<title>' + (b.delta >= 0 ? '+' : '') + b.delta.toLocaleString('en-US') + ' blocks in ' + b.gapH.toFixed(1) + 'h \u2192 ' + Math.round(b.perH).toLocaleString('en-US') + '/h \u00b7 ' + new Date(b.ts).toLocaleString() + '</title></rect>';
   }).join('');
+  var last = pts[pts.length-1].best;
+  var avgPerH = Math.round(bars.reduce(function(a, b) { return a + b.perH; }, 0) / bars.length);
   return '<div class="sparkline">'
-    + '<div class="sparkline-label" data-tip="spark">Best block \u00b7 ' + pts.length + ' checks \u00b7 ' + spanTxt + ' in ~' + durH + 'h</div>'
-    + '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none">'
-    + '<path d="' + path + '" fill="none" stroke="#4ade80" stroke-width="1.5"/>'
-    + circles
-    + '</svg></div>';
+    + '<div class="sparkline-label" data-tip="spark">Blocks per check \u00b7 avg ' + avgPerH.toLocaleString('en-US') + '/h \u00b7 last ' + last.toLocaleString('en-US') + '</div>'
+    + '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none">' + rects + '</svg></div>';
 }
 
 function renderStats(nodes, chains) {

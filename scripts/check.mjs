@@ -359,9 +359,11 @@ async function main() {
   const labelToGenesis = new Map();
   for (const [, v] of discovery.registry) labelToGenesis.set(v.label.toLowerCase(), v);
   const chainsWanted = new Map();
-  for (const cfg of telemetryWatch) {
+  // resolve chains for ALL watched nodes - address-only nodes get telemetry
+  // sessions for their chain too (full node tables on the dashboard)
+  for (const cfg of watch) {
     const want = String(cfg.chain || '').trim().toLowerCase();
-    if (!want) { cfg._chainError = 'no chain configured'; continue; }
+    if (!want) { if (cfg.peerId || cfg.name) cfg._chainError = 'no chain configured'; continue; }
     let hit = labelToGenesis.get(want);
     if (!hit) {
       const subs = [...labelToGenesis.values()].filter((v) => v.label.toLowerCase().includes(want));
