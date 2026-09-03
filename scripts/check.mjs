@@ -467,7 +467,13 @@ async function main() {
       entry.activeSetSize = r.validators.length;
       entry.candidateSetSize = r.candidates ? r.candidates.length : null;
       entry.invulnerableSetSize = r.invulnerables ? r.invulnerables.length : null;
-      entry.activeSet = r.validators.map((raw) => ss58Encode(raw, flavor));
+      // full sets (SS58) for the dashboard collator table
+      const activeSet = r.validators.map((raw) => ss58Encode(raw, flavor));
+      const invulnSet = r.invulnerables ? r.invulnerables.map((raw) => ss58Encode(raw, flavor)) : [];
+      const candSet = r.candidates ? r.candidates.map((c) => ({ address: ss58Encode(c.who, flavor), deposit: c.deposit ? c.deposit.toString() : null })) : [];
+      entry.activeSet = activeSet;
+      entry.invulnerableSet = invulnSet;
+      entry.candidateSet = candSet;
     }
     next.chains[label] = entry;
   }

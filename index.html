@@ -586,8 +586,53 @@ function renderCards(nodes, chains) {
         + '<table class="fullset-table">'
         + '<thead><tr><th></th><th style="text-align:left">Node</th><th style="text-align:left">PeerID</th><th>Best</th><th>Final</th><th>Peers</th><th>Lag</th></tr></thead>'
         + '<tbody>' + rows + '</tbody></table>'
-        + '<div class="fullset-hint">hover a PeerID for the full value</div>'
+        + '<div class="fullset-hint">telemetry shows every reporting node (RPC nodes included) - hover a PeerID for the full value</div>'
         + '</div></div>';
+
+    // on-chain collator table (real sets from chain storage - telemetry cannot filter collators)
+    var cid = 'cs-' + key.replace(/[^a-z0-9]/gi, '');
+    if (chainInfo && (chainInfo.activeSet || chainInfo.candidateSet || chainInfo.invulnerableSet)) {
+      var watchedAddrs = {};
+      Object.values(nodes).forEach(function(n) { if (n.chain === col.chain && n.address) watchedAddrs[n.address] = true; });
+      var activeList = chainInfo.activeSet || [];
+      var invulnList = chainInfo.invulnerableSet || [];
+      var candList = chainInfo.candidateSet || [];
+      var candByAddr = {};
+      candList.forEach(function(c) { candByAddr[c.address] = c; });
+      var setRows = [];
+      activeList.forEach(function(addr) {
+        var isInv = invulnList.indexOf(addr) >= 0;
+        var isWatched = !!watchedAddrs[addr];
+        setRows.push({ addr: addr, role: 'active' + (isInv ? ' \u00b7 invulnerable' : ''), watched: isWatched, deposit: null });
+      });
+      invulnList.forEach(function(addr) {
+        if (activeList.indexOf(addr) >= 0) return;
+        setRows.push({ addr: addr, role: 'invulnerable (standby)', watched: !!watchedAddrs[addr], deposit: null });
+      });
+      candList.forEach(function(c) {
+        if (activeList.indexOf(c.address) >= 0 || invulnList.indexOf(c.address) >= 0) return;
+        setRows.push({ addr: c.address, role: 'candidate (standby)', watched: !!watchedAddrs[c.address], deposit: c.deposit });
+      });
+      setRows.sort(function(a2, b2) { return (b2.watched - a2.watched) || a2.role.localeCompare(b2.role); });
+      var setRowsHtml = setRows.map(function(r2) {
+        return '<tr class="' + (r2.watched ? 'self' : '') + '">'
+          + '<td>' + (r2.watched ? '\u2605' : '') + '</td>'
+          + '<td title="' + escapeHtml(r2.addr) + '" style="cursor:pointer" onclick="copyAddr(this, ' + JSON.stringify(r2.addr).replace(/"/g, '&quot;') + ')">' + escapeHtml(r2.addr.slice(0, 8)) + '\u2026' + escapeHtml(r2.addr.slice(-6)) + '</td>'
+          + '<td>' + escapeHtml(r2.role) + '</td>'
+          + '<td>' + (r2.deposit ? escapeHtml(fmtPlanck(r2.deposit)) : '\u2013') + '</td>'
+          + '</tr>';
+      }).join('');
+      fullsetHtml += '<button class="fullset-toggle" onclick="toggleFullset(\'' + cid + '\', this)">'
+        + '<span class="arrow">\u25B8</span>'
+        + '<span class="tog-text">on-chain collator set (' + setRows.length + ')</span>'
+        + '</button>'
+        + '<div class="fullset-wrap" id="' + cid + '"><div class="fullset-inner">'
+        + '<table class="fullset-table">'
+        + '<thead><tr><th style="width:22px"></th><th style="text-align:left">Address</th><th style="text-align:left">Role</th><th>Bond</th></tr></thead>'
+        + '<tbody>' + setRowsHtml + '</tbody></table>'
+        + '<div class="fullset-hint">from Session.Validators / CollatorSelection storage · click an address to copy</div>'
+        + '</div></div>';
+    }
     }
 
     return '<div class="card status-' + st + '">'
@@ -613,19 +658,11 @@ function renderCards(nodes, chains) {
 function toggleFullset(id, btn) {
   var wrap = document.getElementById(id);
   var open = !wrap.classList.contains('open');
+  // save the original label BEFORE overwriting it with 'hide'
+  if (!btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.querySelector('.tog-text').textContent);
   wrap.classList.toggle('open', open);
   btn.classList.toggle('open', open);
-  btn.querySelector('.tog-text').textContent = open
-    ? 'hide' : btn.querySelector('.tog-text').textContent.replace(/^hide/, function (m) { return m; });
-  if (!open) {
-    // restore original label: rebuild from data
-    var card = btn.closest('.card');
-    var label = card.querySelector('.card-label').textContent;
-    btn.querySelector('.tog-text').textContent = btn.getAttribute('data-label');
-  } else {
-    if (!btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.querySelector('.tog-text').textContent);
-    btn.querySelector('.tog-text').textContent = 'hide';
-  }
+  btn.querySelector('.tog-text').textContent = open ? 'hide' : btn.getAttribute('data-label');
 }
 
 function shortPeer(p) { return p ? p.slice(0, 10) + '\u2026' + p.slice(-4) : '\u2013'; }
