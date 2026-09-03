@@ -193,7 +193,9 @@ body {
 /* sparkline */
 .sparkline { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border); }
 .sparkline-label { font-family: var(--mono); font-size: 9px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
-.sparkline svg { display: block; width: 100%; height: 36px; }
+.sparkline svg { display: block; width: 100%; height: 40px; }
+.sparkline rect { pointer-events: all; }
+.sparkline rect:hover { fill-opacity: 0.75; }
 
 /* ── fullset toggle attached to card bottom ───────────────────────────── */
 .fullset-toggle {
@@ -421,6 +423,24 @@ function setIndicator(state) { document.getElementById('liveIndicator').classNam
   window.addEventListener('scroll', hide, true);
 })();
 
+// sparkline bars: custom hover tooltip (svg <title> is inconsistent/slow in browsers)
+document.addEventListener('mouseover', function (e) {
+  var bar = e.target.closest && e.target.closest('.sparkline rect[data-tip-raw]');
+  if (!bar) return;
+  var tip = document.getElementById('tip');
+  tip.textContent = bar.getAttribute('data-tip-raw');
+  tip.classList.add('show');
+  var rc = bar.getBoundingClientRect();
+  var tr = tip.getBoundingClientRect();
+  tip.style.left = Math.max(8, Math.min(rc.left + rc.width / 2 - tr.width / 2, window.innerWidth - tr.width - 8)) + 'px';
+  tip.style.top = Math.max(8, rc.top - tr.height - 10) + 'px';
+});
+document.addEventListener('mouseout', function (e) {
+  if (e.target.closest && e.target.closest('.sparkline rect[data-tip-raw]')) {
+    document.getElementById('tip').classList.remove('show');
+  }
+});
+
 /* ── click-to-copy ──────────────────────────────────────────────────── */
 function copyAddr(el, text) {
   var done = function () {
@@ -465,8 +485,8 @@ function sparklineHtml(history) {
     var stalled = b.delta === 0;
     var dropped = b.delta < 0;
     var fill = stalled ? '#78350f' : dropped ? '#991b1b' : '#4ade80';
-    return '<rect x="' + x.toFixed(1) + '" y="' + (H - PAD - h).toFixed(1) + '" width="' + Math.max(1, bw - 1.5).toFixed(1) + '" height="' + h.toFixed(1) + '" rx="1" fill="' + fill + '">'
-      + '<title>' + (b.delta >= 0 ? '+' : '') + b.delta.toLocaleString('en-US') + ' blocks in ' + b.gapH.toFixed(1) + 'h \u2192 ' + Math.round(b.perH).toLocaleString('en-US') + '/h \u00b7 ' + new Date(b.ts).toLocaleString() + '</title></rect>';
+    var tipTxt = (b.delta >= 0 ? '+' : '') + b.delta.toLocaleString('en-US') + ' blocks in ' + b.gapH.toFixed(1) + 'h \u2192 ' + Math.round(b.perH).toLocaleString('en-US') + '/h \u00b7 ' + new Date(b.ts).toLocaleString();
+    return '<rect x="' + x.toFixed(1) + '" y="' + (H - PAD - h).toFixed(1) + '" width="' + Math.max(1, bw - 1.5).toFixed(1) + '" height="' + h.toFixed(1) + '" rx="1" fill="' + fill + '" data-tip-raw="' + escapeHtml(tipTxt) + '"></rect>';
   }).join('');
   var last = pts[pts.length-1].best;
   var avgPerH = Math.round(bars.reduce(function(a, b) { return a + b.perH; }, 0) / bars.length);
