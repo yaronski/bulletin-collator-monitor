@@ -10,14 +10,12 @@
     {
       "chain": "Kusama People",
       "address": "EXTrPKwb8ovrnaQMsBsf3nDZu4A4YdHgvNedAiY5DFyM3zB",
-      "label": "ExtraCoin (People, upcoming)",
-      "alerts": false
+      "label": "ExtraCoin (People)"
     },
     {
       "chain": "Polkadot Asset Hub",
       "address": "12EXTrrfo9LTbK7ToB5XekXJysjoWCg3SyqgAMaFpXyXHQUF",
-      "label": "ExtraCoin (AssetHub, upcoming)",
-      "alerts": false
+      "label": "ExtraCoin (AssetHub)"
     }
   ],
   "consecutiveOfflineChecksBeforeAlert": 1,
