@@ -1,5 +1,5 @@
 {
-  "_comment": "Multi-chain collator monitor. Nodes are identified by libp2p PeerID (recommended, stable across restarts), by exact telemetry display name, or by SS58 address (any prefix — Kusama- and Polkadot-style both work; address monitoring checks Session.Validators / CollatorSelection.Candidates / Invulnerables on-chain). Chains are resolved by label against the live telemetry registry (unique substring works too).",
+  "_comment": "Multi-chain collator monitor. Nodes are identified by libp2p PeerID (recommended, stable across restarts), by exact telemetry display name, or by SS58 address (any prefix — Kusama- and Polkadot-style both work; address monitoring checks Session.Validators / CollatorSelection.Candidates / Invulnerables on-chain). Chains are resolved by label against the live telemetry registry (unique substring works too). peerId + address may be combined: peerId fills the telemetry columns, address enables the on-chain set checks.",
   "feedUrl": "wss://feed.telemetry.polkadot.io/feed",
   "nodes": [
     {
@@ -9,13 +9,15 @@
     },
     {
       "chain": "Kusama People",
+      "peerId": "12D3KooWQjTJL6RZmcp4TfjRQ2q9ZQAfxFF9KBMmfvg1wTmNzTcm",
       "address": "EXTrPKwb8ovrnaQMsBsf3nDZu4A4YdHgvNedAiY5DFyM3zB",
-      "label": "ExtraCoin (People)"
+      "label": "ExtraCoin"
     },
     {
       "chain": "Polkadot Asset Hub",
+      "peerId": "12D3KooWSRW6rGbri55GCsAHNdVkVXHz8PEzxnksnGTqhCVALbMB",
       "address": "12EXTrrfo9LTbK7ToB5XekXJysjoWCg3SyqgAMaFpXyXHQUF",
-      "label": "ExtraCoin (AssetHub)"
+      "label": "ExtraCoin"
     }
   ],
   "consecutiveOfflineChecksBeforeAlert": 1,

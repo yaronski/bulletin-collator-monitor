@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-20T12:48:42.003Z",
+  "lastUpdated": "2026-11-20T18:56:45.861Z",
   "feed": {
     "connected": true,
     "registrySize": 139,
@@ -12,189 +12,189 @@
       "feedError": null,
       "relay": "polkadot",
       "nodeCount": 14,
-      "bestBlock": 2762225,
-      "finalizedBlock": 2762219,
+      "bestBlock": 2765899,
+      "finalizedBlock": 2765892,
       "nodesTable": [
         {
           "name": "⚡️ DigitalGhost ⚡️",
           "peerId": "12D3KooWQQZd1fnfri924H9MADRrHkyBTsFt8r81hHA4uVrguKaE",
           "version": "1.25.2-9448fe4f252",
-          "best": 2762225,
-          "finalized": 2762219,
-          "peers": 29,
-          "ttpb": 5919,
-          "stateSize": 987317600,
-          "uploadAvgBs": 31562,
-          "downloadAvgBs": 32508,
+          "best": 2765899,
+          "finalized": 2765892,
+          "peers": 30,
+          "ttpb": 6199,
+          "stateSize": 987529400,
+          "uploadAvgBs": 32723,
+          "downloadAvgBs": 33167,
           "stale": false
         },
         {
           "name": "bulletin-linkpool",
           "peerId": "12D3KooWHBVitfXosAkeHLuA2Mf7B9VFxhkDj6hapyjhFiko92nA",
           "version": "1.25.2-9448fe4f252",
-          "best": 2762225,
-          "finalized": 2762219,
+          "best": 2765899,
+          "finalized": 2765892,
           "peers": 15,
-          "ttpb": 5913,
-          "stateSize": 940184200,
-          "uploadAvgBs": 20750,
-          "downloadAvgBs": 13407,
+          "ttpb": 6202,
+          "stateSize": 987177600,
+          "uploadAvgBs": 20858,
+          "downloadAvgBs": 14056,
           "stale": false
         },
         {
           "name": "DPSTK",
           "peerId": "12D3KooWHPmACsPbXDo9n4qjBZqGEqJ7JLG2fvaCWNCMWyysg6vQ",
           "version": "1.25.2-9448fe4f252",
-          "best": 2762225,
-          "finalized": 2762219,
+          "best": 2765899,
+          "finalized": 2765892,
           "peers": 28,
-          "ttpb": 5915,
-          "stateSize": 527532260,
-          "uploadAvgBs": 42766,
-          "downloadAvgBs": 23523,
+          "ttpb": 6194,
+          "stateSize": 590855100,
+          "uploadAvgBs": 43873,
+          "downloadAvgBs": 22961,
           "stale": false
         },
         {
           "name": "ExtraCoin",
           "peerId": "12D3KooWMc7ZJ6JGiehG1H45JL69QTPivEBnzm8LihkEEFjYMRnr",
           "version": "1.25.2-9448fe4f252",
-          "best": 2762225,
-          "finalized": 2762219,
+          "best": 2765899,
+          "finalized": 2765892,
           "peers": 29,
-          "ttpb": 5911,
-          "stateSize": 987251460,
-          "uploadAvgBs": 41832,
-          "downloadAvgBs": 25513,
+          "ttpb": 6203,
+          "stateSize": 987580900,
+          "uploadAvgBs": 43809,
+          "downloadAvgBs": 24350,
           "stale": false
         },
         {
           "name": "Faraday",
           "peerId": "12D3KooWNy2J75qK8C4o8ooFHpLY4rPPsZcR8qNjgDuW2tvCqEWG",
           "version": "1.25.2-9448fe4f252",
-          "best": 2762225,
-          "finalized": 2762219,
+          "best": 2765899,
+          "finalized": 2765892,
           "peers": 15,
-          "ttpb": 5926,
-          "stateSize": 987041300,
-          "uploadAvgBs": 19244,
-          "downloadAvgBs": 20084,
+          "ttpb": 6230,
+          "stateSize": 987055100,
+          "uploadAvgBs": 26559,
+          "downloadAvgBs": 18737,
           "stale": false
         },
         {
           "name": "INTERWEB-COL1",
           "peerId": "12D3KooWLcMxWNUUNhdVq62P691VtD2iFwyD83i7SxtkGxAuUb2y",
           "version": "1.25.2-9448fe4f252",
-          "best": 2762225,
-          "finalized": 2762219,
+          "best": 2765899,
+          "finalized": 2765892,
           "peers": 28,
-          "ttpb": 5920,
-          "stateSize": 987116200,
-          "uploadAvgBs": 50370,
-          "downloadAvgBs": 16442,
+          "ttpb": 6210,
+          "stateSize": 986957600,
+          "uploadAvgBs": 50072,
+          "downloadAvgBs": 16694,
           "stale": false
         },
         {
           "name": "INTERWEB-RPC1",
           "peerId": "12D3KooWS4hdixye4jq4wSiqMyEu6aS4in52kuy3rUuGtckpnpJd",
           "version": "1.25.2-9448fe4f252",
-          "best": 2762225,
-          "finalized": 2762219,
-          "peers": 27,
-          "ttpb": 5919,
-          "stateSize": null,
-          "uploadAvgBs": null,
-          "downloadAvgBs": null,
+          "best": 2765899,
+          "finalized": 2765892,
+          "peers": 26,
+          "ttpb": 6210,
+          "stateSize": 987041100,
+          "uploadAvgBs": 45386,
+          "downloadAvgBs": 16308,
           "stale": false
         },
         {
           "name": "INTERWEB-RPC2",
           "peerId": "12D3KooWCJndpc7Hbpi9RzrYXacpxsZa1HatWYFAUokD5KqcWL5g",
           "version": "1.25.2-9448fe4f252",
-          "best": 2762225,
-          "finalized": 2762219,
+          "best": 2765899,
+          "finalized": 2765892,
           "peers": 30,
-          "ttpb": 5918,
-          "stateSize": 987513400,
-          "uploadAvgBs": 53604,
-          "downloadAvgBs": 17878,
+          "ttpb": 6216,
+          "stateSize": 987005700,
+          "uploadAvgBs": 54999,
+          "downloadAvgBs": 17637,
           "stale": false
         },
         {
           "name": "MegatronBulletin",
           "peerId": "12D3KooWHEYTsuU8mZiNuEovmCVp1g1tQBVceHDpCrc7p4VN9wZ4",
-          "version": "1.25.1-6ab53982513",
-          "best": 2762225,
-          "finalized": 2762219,
-          "peers": 31,
-          "ttpb": 5918,
-          "stateSize": 987278660,
-          "uploadAvgBs": 38029,
-          "downloadAvgBs": 31811,
+          "version": "1.25.2-9448fe4f252",
+          "best": 2765899,
+          "finalized": 2765892,
+          "peers": 25,
+          "ttpb": 6219,
+          "stateSize": 97114090,
+          "uploadAvgBs": 30907,
+          "downloadAvgBs": 26822,
           "stale": false
         },
         {
           "name": "PN-Bulletin-01",
           "peerId": "12D3KooWBtEY3wxRxF7VgJtu8ottRSZxr5CxS4n2itHpmsZK8K5n",
           "version": "1.25.2-9448fe4f252",
-          "best": 2762225,
-          "finalized": 2762219,
+          "best": 2765899,
+          "finalized": 2765892,
           "peers": 30,
-          "ttpb": 5921,
+          "ttpb": 6243,
           "stateSize": 0,
-          "uploadAvgBs": 34894,
-          "downloadAvgBs": 35838,
+          "uploadAvgBs": 34655,
+          "downloadAvgBs": 38355,
           "stale": false
         },
         {
           "name": "PN-Bulletin-Boot",
           "peerId": "12D3KooWG1DYbATkDZVecTrnzmTiDiXVpbvFL3fn8iUiCEuqQz9c",
           "version": "1.25.2-9448fe4f252",
-          "best": 2762225,
-          "finalized": 2762219,
+          "best": 2765899,
+          "finalized": 2765892,
           "peers": 29,
-          "ttpb": 5918,
-          "stateSize": 987023400,
-          "uploadAvgBs": 33257,
-          "downloadAvgBs": 33213,
+          "ttpb": 6225,
+          "stateSize": 987571700,
+          "uploadAvgBs": 32685,
+          "downloadAvgBs": 33259,
           "stale": false
         },
         {
           "name": "Polkadotters",
           "peerId": "12D3KooWEKjYGD5a3veYTcV3s7rkvXfi9gxYbZEbBCk2NtqH8Lp2",
           "version": "1.25.2-9448fe4f252",
-          "best": 2762225,
-          "finalized": 2762219,
+          "best": 2765899,
+          "finalized": 2765892,
           "peers": 28,
-          "ttpb": 5920,
-          "stateSize": 987268200,
-          "uploadAvgBs": 31090,
-          "downloadAvgBs": 39054,
+          "ttpb": 6267,
+          "stateSize": 986844300,
+          "uploadAvgBs": 32946,
+          "downloadAvgBs": 41127,
           "stale": false
         },
         {
           "name": "Rotko Networks - rpc-bulletin-polkadot-01 Endpoint",
           "peerId": "12D3KooWEwqFeJAeUi2YLU5963WHp4E8qit6jeAjhczB4YbDzx1H",
           "version": "1.25.2-9448fe4f252",
-          "best": 2762225,
-          "finalized": 2762219,
+          "best": 2765899,
+          "finalized": 2765892,
           "peers": 27,
-          "ttpb": 5919,
-          "stateSize": 986917900,
-          "uploadAvgBs": 3478,
-          "downloadAvgBs": 65393,
+          "ttpb": 6219,
+          "stateSize": 987269100,
+          "uploadAvgBs": 3371,
+          "downloadAvgBs": 61692,
           "stale": false
         },
         {
           "name": "Simply Staking: Bulletin Node CA",
           "peerId": "12D3KooWH7GPMht12HuqCrDcS57goPwAko3zeFMs9taC49wHWPun",
           "version": "1.25.2-6ab53982513",
-          "best": 2762225,
-          "finalized": 2762219,
-          "peers": 26,
-          "ttpb": 5920,
-          "stateSize": 987000900,
-          "uploadAvgBs": 28412,
-          "downloadAvgBs": 32739,
+          "best": 2765899,
+          "finalized": 2765892,
+          "peers": 27,
+          "ttpb": 6263,
+          "stateSize": 987099000,
+          "uploadAvgBs": 29153,
+          "downloadAvgBs": 36490,
           "stale": false
         }
       ]
@@ -205,241 +205,241 @@
       "feedError": null,
       "relay": "kusama",
       "nodeCount": 18,
-      "bestBlock": 11638817,
-      "finalizedBlock": 11638811,
+      "bestBlock": 11642259,
+      "finalizedBlock": 11642253,
       "nodesTable": [
         {
           "name": "⚡️ DigitalGhost ⚡️",
           "peerId": "12D3KooWJCJ9hn3KxXYPAVozgU4HJdDVts4gt7Cwv777Pkos6nb2",
           "version": "1.25.2-9448fe4f252",
-          "best": 11638817,
-          "finalized": 11638811,
-          "peers": 24,
-          "ttpb": 5951,
-          "stateSize": 986382600,
-          "uploadAvgBs": 27174,
-          "downloadAvgBs": 27693,
+          "best": 11642259,
+          "finalized": 11642253,
+          "peers": 26,
+          "ttpb": 6001,
+          "stateSize": 986541500,
+          "uploadAvgBs": 28320,
+          "downloadAvgBs": 27397,
           "stale": false
         },
         {
           "name": "CoinStudio/People",
           "peerId": "12D3KooWB5hHpyzgBHre3JVWxCr9XEnCHorrv9rwbJgqPG6FvZBL",
           "version": "1.25.1-6ab53982513",
-          "best": 11638817,
-          "finalized": 11638811,
-          "peers": 29,
-          "ttpb": 5950,
+          "best": 11642259,
+          "finalized": 11642253,
+          "peers": 28,
+          "ttpb": 5997,
           "stateSize": 0,
-          "uploadAvgBs": 29984,
-          "downloadAvgBs": 37055,
+          "uploadAvgBs": 29009,
+          "downloadAvgBs": 37068,
           "stale": false
         },
         {
           "name": "Dox-People-Kusama-RPC",
           "peerId": "12D3KooWBAbWKgTFkhpUXmzZ3bcuop81g2zgWrMr2nLEuTAxvdRx",
           "version": "1.25.2-9448fe4f252",
-          "best": 11638817,
-          "finalized": 11638811,
+          "best": 11642259,
+          "finalized": 11642253,
           "peers": 6,
-          "ttpb": 5961,
-          "stateSize": 986373440,
-          "uploadAvgBs": 4956,
-          "downloadAvgBs": 16834,
+          "ttpb": 5994,
+          "stateSize": 986264060,
+          "uploadAvgBs": 4401,
+          "downloadAvgBs": 15670,
           "stale": false
         },
         {
           "name": "Dox-People-Kusama-RPC-2",
           "peerId": "12D3KooWBxKyYnwYw4ASxe7F71Z6r4N73rPvidVQo3AzEnvQDzVg",
           "version": "1.25.2-9448fe4f252",
-          "best": 11638817,
-          "finalized": 11638811,
+          "best": 11642259,
+          "finalized": 11642253,
           "peers": 6,
-          "ttpb": 5942,
-          "stateSize": 986373400,
-          "uploadAvgBs": 2061,
-          "downloadAvgBs": 14274,
+          "ttpb": 6000,
+          "stateSize": 986263550,
+          "uploadAvgBs": 2026,
+          "downloadAvgBs": 14083,
           "stale": false
         },
         {
           "name": "ExtraCoin",
           "peerId": "12D3KooWQjTJL6RZmcp4TfjRQ2q9ZQAfxFF9KBMmfvg1wTmNzTcm",
           "version": "1.25.0-7a8daa68e18",
-          "best": 11638817,
-          "finalized": 11638811,
-          "peers": 14,
-          "ttpb": 5947,
-          "stateSize": 16754014,
-          "uploadAvgBs": 8255,
-          "downloadAvgBs": 8598,
+          "best": 11642259,
+          "finalized": 11642253,
+          "peers": 15,
+          "ttpb": 6001,
+          "stateSize": 22218752,
+          "uploadAvgBs": 14306,
+          "downloadAvgBs": 11781,
           "stale": false
         },
         {
           "name": "HYPERSPEED_PP⏩",
           "peerId": "12D3KooWCZHvpbgJmy9XrVakodTdKxCi1hfJu9qwy1KqcxjkhP2G",
           "version": "1.25.2-9448fe4f252",
-          "best": 11638817,
-          "finalized": 11638811,
+          "best": 11642259,
+          "finalized": 11642253,
           "peers": 30,
-          "ttpb": 5958,
-          "stateSize": 928924000,
-          "uploadAvgBs": 32701,
-          "downloadAvgBs": 26853,
+          "ttpb": 5995,
+          "stateSize": 893086900,
+          "uploadAvgBs": 37591,
+          "downloadAvgBs": 27589,
           "stale": false
         },
         {
           "name": "Mile-People-Kusama",
           "peerId": "12D3KooWLLdE9hf1XCR9ZkX3uR4mQrGMPS5XWTRHwchT8ew8pUVg",
           "version": "1.25.2-9448fe4f252",
-          "best": 11638817,
-          "finalized": 11638811,
+          "best": 11642259,
+          "finalized": 11642253,
           "peers": 18,
-          "ttpb": 5935,
+          "ttpb": 5998,
           "stateSize": 0,
-          "uploadAvgBs": 16712,
-          "downloadAvgBs": 23261,
+          "uploadAvgBs": 16363,
+          "downloadAvgBs": 23448,
           "stale": false
         },
         {
           "name": "people-kusama-xxp-01",
           "peerId": "12D3KooWSHnkz7K1UkMexnQNjozkhyDCeCs1rP2d7XTZnMTPqAWp",
           "version": "1.24.2-72284b37a23",
-          "best": 11638817,
-          "finalized": 11638811,
+          "best": 11642259,
+          "finalized": 11642253,
           "peers": 18,
-          "ttpb": 5938,
-          "stateSize": 986397440,
-          "uploadAvgBs": 7851,
-          "downloadAvgBs": 29821,
+          "ttpb": 6007,
+          "stateSize": 986547840,
+          "uploadAvgBs": 8115,
+          "downloadAvgBs": 30957,
           "stale": false
         },
         {
           "name": "PN-People-KSM",
           "peerId": "12D3KooWQWyCDfvHDnmVTkaaPn6dxfMJM1NRvkBBYMx21QH3WBjv",
           "version": "1.25.2-9448fe4f252",
-          "best": 11638817,
-          "finalized": 11638811,
+          "best": 11642259,
+          "finalized": 11642253,
           "peers": 30,
-          "ttpb": 5928,
+          "ttpb": 5996,
           "stateSize": 0,
-          "uploadAvgBs": 36954,
-          "downloadAvgBs": 33449,
+          "uploadAvgBs": 37539,
+          "downloadAvgBs": 34502,
           "stale": false
         },
         {
           "name": "PN-RPC-People-KSM-01",
           "peerId": "12D3KooWJ878qp7KravXrvCBZeJCQRwDBXCizJah654ZRiYSrxMr",
           "version": "1.25.2-9448fe4f252",
-          "best": 11638817,
-          "finalized": 11638811,
-          "peers": 29,
-          "ttpb": 5928,
-          "stateSize": 906108900,
-          "uploadAvgBs": 32228,
-          "downloadAvgBs": 32062,
+          "best": 11642259,
+          "finalized": 11642253,
+          "peers": 28,
+          "ttpb": 5997,
+          "stateSize": 957470660,
+          "uploadAvgBs": 32783,
+          "downloadAvgBs": 34134,
           "stale": false
         },
         {
           "name": "PN-RPC-People-KSM-02",
           "peerId": "12D3KooWQruybfC75LnuRSGR3wt3okNjcvJqg24BUwPSW8rNG2ED",
           "version": "1.25.2-9448fe4f252",
-          "best": 11638817,
-          "finalized": 11638811,
+          "best": 11642259,
+          "finalized": 11642253,
           "peers": 29,
-          "ttpb": 5931,
-          "stateSize": 910775900,
-          "uploadAvgBs": 33216,
-          "downloadAvgBs": 33768,
+          "ttpb": 5997,
+          "stateSize": 962153000,
+          "uploadAvgBs": 33212,
+          "downloadAvgBs": 33590,
           "stale": false
         },
         {
           "name": "Rotko Networks - rpc-people-kusama-01",
           "peerId": "12D3KooWSKQwgoydfbN6mNN2aNwdqfkR2ExAnTRs8mmdrPQTtDLo",
           "version": "1.25.2-9448fe4f252",
-          "best": 11638817,
-          "finalized": 11638811,
-          "peers": 15,
-          "ttpb": 5967,
-          "stateSize": 986362600,
-          "uploadAvgBs": 9171,
-          "downloadAvgBs": 29924,
+          "best": 11642259,
+          "finalized": 11642253,
+          "peers": 14,
+          "ttpb": 5997,
+          "stateSize": 986518900,
+          "uploadAvgBs": 8244,
+          "downloadAvgBs": 29240,
           "stale": false
         },
         {
           "name": "Rotko Networks - rpc-people-kusama-02",
           "peerId": "12D3KooWLFmJwxqd8ho3LGi2LSpNtGsT6uch4WYSbnwMyR2uYB9y",
           "version": "1.25.2-9448fe4f252",
-          "best": 11638817,
-          "finalized": 11638811,
+          "best": 11642259,
+          "finalized": 11642253,
           "peers": 12,
-          "ttpb": 5977,
-          "stateSize": 986362800,
-          "uploadAvgBs": 3194,
-          "downloadAvgBs": 24207,
+          "ttpb": 5998,
+          "stateSize": 986519900,
+          "uploadAvgBs": 3413,
+          "downloadAvgBs": 25201,
           "stale": false
         },
         {
           "name": "Sik | crifferent(dot)de",
           "peerId": "12D3KooWBa2hQrVBNJep9cSJ44EfULW5d6Ptr1qSPc6tw8nYwu69",
           "version": "1.25.0-7a8daa68e18",
-          "best": 11638817,
-          "finalized": 11638811,
-          "peers": 10,
-          "ttpb": 5948,
-          "stateSize": 16753178,
-          "uploadAvgBs": 9634,
-          "downloadAvgBs": 9971,
+          "best": 11642259,
+          "finalized": 11642253,
+          "peers": 12,
+          "ttpb": 5999,
+          "stateSize": 22218752,
+          "uploadAvgBs": 13657,
+          "downloadAvgBs": 11661,
           "stale": false
         },
         {
           "name": "STKD-people-kusama-xxp-01",
           "peerId": "12D3KooWQuiteWZ84dHu6SoXKmNs3D1y88EvdVXuLSmvkpEfuPgH",
           "version": "1.24.3-9d0dc6e8fbb",
-          "best": 11638817,
-          "finalized": 11638811,
+          "best": 11642259,
+          "finalized": 11642253,
           "peers": 28,
-          "ttpb": 5950,
-          "stateSize": 986487550,
-          "uploadAvgBs": 25047,
-          "downloadAvgBs": 44792,
+          "ttpb": 6011,
+          "stateSize": 962426700,
+          "uploadAvgBs": 24721,
+          "downloadAvgBs": 45895,
           "stale": false
         },
         {
           "name": "sw-col-ksm-people-01",
           "peerId": "12D3KooWQ1AmEpWDUsuj8GuKYsu3VswwCkfymuJdSVkeGBBXfHq8",
           "version": "1.25.2-9448fe4f252",
-          "best": 11638817,
-          "finalized": 11638811,
+          "best": 11642259,
+          "finalized": 11642253,
           "peers": 26,
-          "ttpb": 5950,
-          "stateSize": 986480300,
-          "uploadAvgBs": 41483,
-          "downloadAvgBs": 15475,
+          "ttpb": 6004,
+          "stateSize": 986336300,
+          "uploadAvgBs": 42036,
+          "downloadAvgBs": 16739,
           "stale": false
         },
         {
           "name": "sw-rpc-ksm-people-05",
           "peerId": "12D3KooWR2neKfQjEZEEA89Vo9turx2jEcxxcpsikpCd9Y1Nexeq",
           "version": "1.25.2-9448fe4f252",
-          "best": 11638817,
-          "finalized": 11638811,
-          "peers": 29,
-          "ttpb": 5948,
-          "stateSize": 915179800,
-          "uploadAvgBs": 47300,
-          "downloadAvgBs": 13737,
+          "best": 11642259,
+          "finalized": 11642253,
+          "peers": 26,
+          "ttpb": 6001,
+          "stateSize": 967058500,
+          "uploadAvgBs": 43328,
+          "downloadAvgBs": 13463,
           "stale": false
         },
         {
           "name": "TunaEatsPeople-Kusama",
           "peerId": "12D3KooWQ6kazQpELg4TwZVWTJQntovcphdT8qVSw7ox5Ano52BN",
           "version": "1.25.2-9448fe4f252",
-          "best": 11638817,
-          "finalized": 11638811,
+          "best": 11642259,
+          "finalized": 11642253,
           "peers": 30,
-          "ttpb": 5935,
+          "ttpb": 5995,
           "stateSize": 0,
-          "uploadAvgBs": 32325,
-          "downloadAvgBs": 26956,
+          "uploadAvgBs": 33136,
+          "downloadAvgBs": 29285,
           "stale": false
         }
       ],
@@ -490,515 +490,502 @@
       "feedOk": true,
       "feedError": null,
       "relay": "polkadot",
-      "nodeCount": 41,
-      "bestBlock": 23376935,
-      "finalizedBlock": 23376919,
+      "nodeCount": 40,
+      "bestBlock": 23387881,
+      "finalizedBlock": 23387863,
       "nodesTable": [
         {
           "name": "⚡️ DigitalGhost ⚡️",
           "peerId": "12D3KooWAJHQvsiCF6vUAD5RMcD7NDVbCZsr5EnpHFqb1HKP8NCS",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 40,
-          "ttpb": 1984,
-          "stateSize": 772587200,
-          "uploadAvgBs": 342009,
-          "downloadAvgBs": 395103,
+          "ttpb": 4083,
+          "stateSize": 763559600,
+          "uploadAvgBs": 347236,
+          "downloadAvgBs": 389937,
           "stale": false
         },
         {
           "name": "🍀LuckyFriday-Statemint🍀",
           "peerId": "12D3KooW9qfPhQkJb3gNMGdXutS42aRmFg91KkMvuK2pjQpkvXhc",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 40,
-          "ttpb": 1990,
+          "ttpb": 4084,
           "stateSize": 0,
-          "uploadAvgBs": 532666,
-          "downloadAvgBs": 267036,
+          "uploadAvgBs": 498116,
+          "downloadAvgBs": 288460,
           "stale": false
         },
         {
           "name": "🦒",
           "peerId": "12D3KooWQC4zwmHx4B9rWNMV7qUaq8grKYRsH4dncBUaAcxF2Fd5",
           "version": "1.24.1-8ae9775dc43",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 100,
-          "ttpb": 1973,
-          "stateSize": null,
-          "uploadAvgBs": null,
-          "downloadAvgBs": null,
+          "ttpb": 4074,
+          "stateSize": 789813500,
+          "uploadAvgBs": 1310755,
+          "downloadAvgBs": 392301,
           "stale": false
         },
         {
           "name": "🧊 Iceberg Nodes 🧊",
           "peerId": "12D3KooWGE6NbvSi3h21WiqZamgnK49d44dhQzGMoSERvbrtVfdV",
           "version": "1.25.0-7a8daa68e18",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 59,
-          "ttpb": 1990,
-          "stateSize": 749034200,
-          "uploadAvgBs": 875573,
-          "downloadAvgBs": 197293,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 58,
+          "ttpb": 4080,
+          "stateSize": 780827500,
+          "uploadAvgBs": 871137,
+          "downloadAvgBs": 179771,
           "stale": false
         },
         {
           "name": "🧊 Iceberg Nodes 🧊 | RPC",
           "peerId": "12D3KooW9tEXrRZuptntujtRQaagBQtXdVWtVUPVXxTfbbkFXzor",
           "version": "1.25.0-7a8daa68e18",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 40,
-          "ttpb": 1992,
-          "stateSize": 834482900,
-          "uploadAvgBs": 388065,
-          "downloadAvgBs": 287046,
+          "ttpb": 4087,
+          "stateSize": 715623230,
+          "uploadAvgBs": 393815,
+          "downloadAvgBs": 312233,
           "stale": false
         },
         {
           "name": "asset-hub-linkpool",
           "peerId": "12D3KooWB2Bbvthb7uwUvrWJMTrixKrhZmspx3DQjHkrn6MWJZeU",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 14,
-          "ttpb": 1988,
-          "stateSize": 716562400,
-          "uploadAvgBs": 421265,
-          "downloadAvgBs": 87930,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 15,
+          "ttpb": 4082,
+          "stateSize": 926044400,
+          "uploadAvgBs": 144855,
+          "downloadAvgBs": 103673,
           "stale": false
         },
         {
           "name": "asset-hub-linkpool",
           "peerId": "12D3KooWHqw1U4UnmiwAwmtrLMRYAVEhx8Vi56Rc19mDbQdrQLQq",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 11,
-          "ttpb": 1989,
-          "stateSize": null,
-          "uploadAvgBs": null,
-          "downloadAvgBs": null,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 12,
+          "ttpb": 4083,
+          "stateSize": 824627900,
+          "uploadAvgBs": 76793,
+          "downloadAvgBs": 109624,
           "stale": false
         },
         {
           "name": "asset-hub-linkpool-rpc",
           "peerId": "12D3KooWHLV6uY72AgF8es6eFocbryr17ZTUbVsMPQW7wCfGmLZa",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 13,
-          "ttpb": 1999,
-          "stateSize": 706659650,
-          "uploadAvgBs": 96678,
-          "downloadAvgBs": 120488,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 14,
+          "ttpb": 4071,
+          "stateSize": 830468700,
+          "uploadAvgBs": 122414,
+          "downloadAvgBs": 132046,
           "stale": false
         },
         {
           "name": "asset-hub-linkpool-rpc",
           "peerId": "12D3KooWJbimRBiwsgnhEWZ8N8yETGB2wvQxqJDEHsdyckwpzUxu",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 18,
-          "ttpb": 1989,
-          "stateSize": 721024800,
-          "uploadAvgBs": 145636,
-          "downloadAvgBs": 150699,
+          "ttpb": 4068,
+          "stateSize": 798237250,
+          "uploadAvgBs": 131750,
+          "downloadAvgBs": 169534,
           "stale": false
         },
         {
           "name": "asset-hub-linkpool-rpc-sec",
           "peerId": "12D3KooWEqN9Txt1ccc5E6BtkjDi8yPQdt993oJGhG7vVv8JiFsE",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 14,
-          "ttpb": 1986,
-          "stateSize": 715342660,
-          "uploadAvgBs": 152320,
-          "downloadAvgBs": 100618,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 12,
+          "ttpb": 4080,
+          "stateSize": 807868540,
+          "uploadAvgBs": 121020,
+          "downloadAvgBs": 94935,
           "stale": false
         },
         {
           "name": "asset-hub-linkpool-rpc-sec",
           "peerId": "12D3KooWB7HXZRb18mmd6qJLrApqgz3EexgVEZaCfvb5fJPtVteq",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 12,
-          "ttpb": 1994,
-          "stateSize": 707161800,
-          "uploadAvgBs": 106689,
-          "downloadAvgBs": 81726,
+          "ttpb": 4079,
+          "stateSize": 824338100,
+          "uploadAvgBs": 105749,
+          "downloadAvgBs": 84179,
           "stale": false
         },
         {
           "name": "asset-hub-polkadot-bezzera",
           "peerId": "12D3KooWEVkdyzrdcgsjzdEpxcpgoSx3maviGGGKa4ZNJWUap4wt",
           "version": "1.21.1-c6ba84fb493",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 38,
-          "ttpb": 1998,
-          "stateSize": 260133120,
-          "uploadAvgBs": 407821,
-          "downloadAvgBs": 135198,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 40,
+          "ttpb": 4055,
+          "stateSize": 795176700,
+          "uploadAvgBs": 1123273,
+          "downloadAvgBs": 148890,
           "stale": false
         },
         {
           "name": "Bestvalidator",
           "peerId": "12D3KooWPhXdLJCRCU7MN5iygqk3xgavLpsvdpGotVWmnpTgWDXG",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 64,
-          "ttpb": 1986,
+          "ttpb": 4079,
           "stateSize": 0,
-          "uploadAvgBs": 1243511,
-          "downloadAvgBs": 543934,
-          "stale": false
-        },
-        {
-          "name": "DELTA ULTRA",
-          "peerId": "12D3KooWSbrhASfR9tUJayXpbFthxcSA4i9MCTubv71Ldobp6FF5",
-          "version": "1.22.1-f8cfbb96055",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 10,
-          "ttpb": 1987,
-          "stateSize": 758208800,
-          "uploadAvgBs": 91904,
-          "downloadAvgBs": 68879,
+          "uploadAvgBs": 954676,
+          "downloadAvgBs": 567235,
           "stale": false
         },
         {
           "name": "deserve-asset-hub-polkadot-istanbul-01",
           "peerId": "12D3KooWKHhHUEYtTJmnYPMMmt88qDPNytA7gggevfUrBpca2rG1",
           "version": "1.24.2-72284b37a23",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 19,
-          "ttpb": 1987,
-          "stateSize": 892797100,
-          "uploadAvgBs": 107827,
-          "downloadAvgBs": 202631,
-          "stale": false
-        },
-        {
-          "name": "Dox-Assethub-DOT-RPC",
-          "peerId": "12D3KooWCH7XENnBHwZEKiaTzSSC8hSx98ushEtXRd2Jomm54Lzd",
-          "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 6,
-          "ttpb": 2126,
-          "stateSize": 883563000,
-          "uploadAvgBs": 9067,
-          "downloadAvgBs": 105348,
+          "ttpb": 4083,
+          "stateSize": 731997250,
+          "uploadAvgBs": 110082,
+          "downloadAvgBs": 202883,
           "stale": false
         },
         {
           "name": "Dox-Assethub-DOT-RPC-2",
           "peerId": "12D3KooWMHBeXkpbTfGoCZSufHrrQ5HxjwvN96TU5iDtdTWj4tK5",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 5,
-          "ttpb": 2008,
-          "stateSize": 830992300,
-          "uploadAvgBs": 14402,
-          "downloadAvgBs": 53327,
+          "ttpb": 4067,
+          "stateSize": 719249660,
+          "uploadAvgBs": 11634,
+          "downloadAvgBs": 53522,
           "stale": false
         },
         {
           "name": "DPSTK-AssetHub",
           "peerId": "12D3KooWPJfGGisRMkiD5yhySZggEhyMSwELb34P2bEuAmUh9RYy",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 62,
-          "ttpb": 1990,
-          "stateSize": 971110850,
-          "uploadAvgBs": 797419,
-          "downloadAvgBs": 172247,
+          "ttpb": 4078,
+          "stateSize": 766875260,
+          "uploadAvgBs": 815109,
+          "downloadAvgBs": 175011,
           "stale": false
         },
         {
           "name": "ExtraCoin",
           "peerId": "12D3KooWSRW6rGbri55GCsAHNdVkVXHz8PEzxnksnGTqhCVALbMB",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 25,
-          "ttpb": 1997,
-          "stateSize": 958259600,
-          "uploadAvgBs": 253647,
-          "downloadAvgBs": 97456,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 29,
+          "ttpb": 4112,
+          "stateSize": 772492000,
+          "uploadAvgBs": 299296,
+          "downloadAvgBs": 145499,
           "stale": false
         },
         {
           "name": "LinkPool",
           "peerId": "12D3KooWHWxoAKL8wv7SVHEiVQio2x9MMFxGt6C4rbLdT9mNYPQD",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 39,
-          "ttpb": 1987,
-          "stateSize": 692009800,
-          "uploadAvgBs": 484765,
-          "downloadAvgBs": 219587,
+          "ttpb": 4068,
+          "stateSize": 873256960,
+          "uploadAvgBs": 512500,
+          "downloadAvgBs": 202585,
           "stale": false
         },
         {
           "name": "MileAsset-Hub-Polkadot",
           "peerId": "12D3KooWG1SiHkaYuEFcC2XAU3MgPDeHSedxuAjDYhzjtw6AsXfe",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 49,
-          "ttpb": 1990,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 47,
+          "ttpb": 4083,
           "stateSize": 0,
-          "uploadAvgBs": 464864,
-          "downloadAvgBs": 433218,
+          "uploadAvgBs": 400288,
+          "downloadAvgBs": 435544,
           "stale": false
         },
         {
           "name": "PN-Asset-Hub-Polkadot",
           "peerId": "12D3KooWJhWTtHiEbFov7n3Z78H8RZmhfy99CPDo94Perc8K9mAC",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 96,
-          "ttpb": 1979,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 95,
+          "ttpb": 4094,
           "stateSize": 0,
-          "uploadAvgBs": 1090061,
-          "downloadAvgBs": 651494,
+          "uploadAvgBs": 3011536,
+          "downloadAvgBs": 712824,
           "stale": false
         },
         {
           "name": "PN-RPC-Assethub-DOT-01",
           "peerId": "12D3KooWJ7Y4dLUi75WgmSu19MvzpwjpzjHAk8KTdco2rwE6Nuqp",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 92,
-          "ttpb": 1981,
-          "stateSize": null,
-          "uploadAvgBs": null,
-          "downloadAvgBs": null,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 93,
+          "ttpb": 4064,
+          "stateSize": 715814300,
+          "uploadAvgBs": 1287116,
+          "downloadAvgBs": 640515,
           "stale": false
         },
         {
           "name": "PN-RPC-Assethub-DOT-02",
           "peerId": "12D3KooWMfDXgT8U8rfPntVxa8UVcZsawc8az8hL7JMHFc1CqNCr",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 92,
-          "ttpb": 1982,
-          "stateSize": 820267600,
-          "uploadAvgBs": 1114019,
-          "downloadAvgBs": 665060,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 96,
+          "ttpb": 4079,
+          "stateSize": 717302200,
+          "uploadAvgBs": 2038370,
+          "downloadAvgBs": 673541,
           "stale": false
         },
         {
           "name": "Rotko Networks - rpc-asset-hub-polkadot-01",
           "peerId": "12D3KooWKkzLjYF6M5eEs7nYiqEtRqY8SGVouoCwo3nCWsRnThDW",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 15,
-          "ttpb": 1988,
-          "stateSize": 710736600,
-          "uploadAvgBs": 36253,
-          "downloadAvgBs": 248378,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 16,
+          "ttpb": 3930,
+          "stateSize": 817103700,
+          "uploadAvgBs": 33065,
+          "downloadAvgBs": 261244,
           "stale": false
         },
         {
           "name": "Rotko Networks - rpc-asset-hub-polkadot-02 Endpoint",
           "peerId": "12D3KooWEEXTd2Evr3mhb3GNrW3vQVXoZREVFd7K3mSQQGJUQfJW",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 15,
-          "ttpb": 1998,
-          "stateSize": 712531200,
-          "uploadAvgBs": 46409,
-          "downloadAvgBs": 249442,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 14,
+          "ttpb": 3925,
+          "stateSize": 809298900,
+          "uploadAvgBs": 53564,
+          "downloadAvgBs": 222297,
           "stale": false
         },
         {
           "name": "Simply Staking: Archive Node CA",
           "peerId": "12D3KooWRrbgS78dgY7bKoiE6QUT7poCv8afMiQjkwzR7UPayMPp",
           "version": "1.25.2-6ab53982513",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 16,
-          "ttpb": 2016,
-          "stateSize": 725288300,
-          "uploadAvgBs": 110768,
-          "downloadAvgBs": 207205,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 17,
+          "ttpb": 3716,
+          "stateSize": 935367300,
+          "uploadAvgBs": 119994,
+          "downloadAvgBs": 203552,
           "stale": false
         },
         {
           "name": "Simply Staking: Archive Node NL",
           "peerId": "12D3KooWMfncKtg4tXraRzRuy3tkjHvgBLZrPEsjLhZXVvLBVbQu",
           "version": "1.25.2-6ab53982513",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 18,
-          "ttpb": 1992,
-          "stateSize": 738601900,
-          "uploadAvgBs": 202486,
-          "downloadAvgBs": 111917,
+          "ttpb": 4062,
+          "stateSize": 950675200,
+          "uploadAvgBs": 222851,
+          "downloadAvgBs": 120633,
           "stale": false
         },
         {
           "name": "Simply Staking: Node CA",
           "peerId": "12D3KooWDm3khZrhpKVyLqMNkLCxLfpH4A54HaRifjNqWobWwJdf",
           "version": "1.25.2-6ab53982513",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 39,
-          "ttpb": 1989,
-          "stateSize": 752205500,
-          "uploadAvgBs": 381076,
-          "downloadAvgBs": 324406,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 40,
+          "ttpb": 4083,
+          "stateSize": 932069060,
+          "uploadAvgBs": 491360,
+          "downloadAvgBs": 344959,
           "stale": false
         },
         {
           "name": "Staker Space [1]",
           "peerId": "12D3KooWD9dTKLW65NFFLVjqgaXNzb3zKXBfwRS5iovxV6XaoVX6",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 61,
-          "ttpb": 1981,
-          "stateSize": 756443970,
-          "uploadAvgBs": 911236,
-          "downloadAvgBs": 229467,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 62,
+          "ttpb": 4038,
+          "stateSize": 776613000,
+          "uploadAvgBs": 947646,
+          "downloadAvgBs": 235803,
           "stale": false
         },
         {
           "name": "STKD",
           "peerId": "12D3KooWKM8QhkqB6NJjgyPkH2s4xDp7cbqrqBwwMHupreh1JPFX",
           "version": "1.25.1-6ab53982513",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 37,
-          "ttpb": 1994,
-          "stateSize": 865526100,
-          "uploadAvgBs": 204500,
-          "downloadAvgBs": 427872,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 36,
+          "ttpb": 4081,
+          "stateSize": 725733700,
+          "uploadAvgBs": 172778,
+          "downloadAvgBs": 433866,
           "stale": false
         },
         {
           "name": "sw-rpc-dot-asset-00",
           "peerId": "12D3KooWD8pxR4Ervm4tLsmsxNc82ouSQxaYWYWmVnrT5bYhAxQv",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 39,
-          "ttpb": 2010,
-          "stateSize": 752865660,
-          "uploadAvgBs": 603796,
-          "downloadAvgBs": 166951,
+          "ttpb": 4021,
+          "stateSize": 792274500,
+          "uploadAvgBs": 704803,
+          "downloadAvgBs": 166923,
           "stale": false
         },
         {
           "name": "sw-rpc-dot-asset-02",
           "peerId": "12D3KooWLyAv9mKXydyAyeZvV5rQig8V1AnBhz8cbVd57rbz8W8x",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 40,
-          "ttpb": 1981,
-          "stateSize": 713996540,
-          "uploadAvgBs": 354430,
-          "downloadAvgBs": 389558,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 39,
+          "ttpb": 4079,
+          "stateSize": 832839230,
+          "uploadAvgBs": 358624,
+          "downloadAvgBs": 379251,
           "stale": false
         },
         {
           "name": "sw-rpc-dot-asset-05",
           "peerId": "12D3KooWKkktcUkgFHaijdHWFF5GA4FY2yzr1vFNVgRWp5TyAupb",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 40,
-          "ttpb": 2000,
-          "stateSize": 841832900,
-          "uploadAvgBs": 483851,
-          "downloadAvgBs": 184762,
+          "ttpb": 4088,
+          "stateSize": 715561500,
+          "uploadAvgBs": 502519,
+          "downloadAvgBs": 168668,
           "stale": false
         },
         {
           "name": "sw-rpc-dot-asset-07",
           "peerId": "12D3KooWRAzwpWUDXTpPTdXE65pVtqcDvGvreGcxnPuFMGw4SdFz",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 39,
-          "ttpb": 1982,
-          "stateSize": 850060000,
-          "uploadAvgBs": 440072,
-          "downloadAvgBs": 318844,
+          "ttpb": 4083,
+          "stateSize": 718869100,
+          "uploadAvgBs": 493330,
+          "downloadAvgBs": 259426,
           "stale": false
         },
         {
           "name": "Tatum-RPC1",
           "peerId": "12D3KooWPxAjZ6h1ig8cYQXPU8HcipUESqBjRUGWuLojNRbszGxw",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 30,
-          "ttpb": 2026,
-          "stateSize": 732197400,
-          "uploadAvgBs": 404851,
-          "downloadAvgBs": 138325,
+          "ttpb": 4076,
+          "stateSize": 793296000,
+          "uploadAvgBs": 421294,
+          "downloadAvgBs": 136636,
           "stale": false
         },
         {
           "name": "Tatum-RPC2",
           "peerId": "12D3KooWLDxNzeQHNtmxoQngfZ1pCzAKhJbw95vzM663kt2CFSTC",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 29,
-          "ttpb": 2024,
-          "stateSize": 959492860,
-          "uploadAvgBs": 304716,
-          "downloadAvgBs": 250528,
+          "ttpb": 4082,
+          "stateSize": 750756030,
+          "uploadAvgBs": 301316,
+          "downloadAvgBs": 255091,
           "stale": false
         },
         {
           "name": "TunaAsset-Hub-Polkadot",
           "peerId": "12D3KooWAdMNwemg4s9qGBpogj6mpSE6cdqFNCMtvRv7nf7CJYLs",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
+          "best": 23387881,
+          "finalized": 23387863,
           "peers": 95,
-          "ttpb": 1989,
+          "ttpb": 4083,
           "stateSize": 0,
-          "uploadAvgBs": 1277158,
-          "downloadAvgBs": 577965,
+          "uploadAvgBs": 1272174,
+          "downloadAvgBs": 578588,
           "stale": false
         },
         {
           "name": "turboflakes-asset-hub-1",
           "peerId": "12D3KooWFhBYG98e53DQB7W2JKBL9xWrP83ANkAjzvp4enEJAt3k",
           "version": "1.25.2-9448fe4f252",
-          "best": 23376935,
-          "finalized": 23376919,
-          "peers": 56,
-          "ttpb": 1999,
+          "best": 23387881,
+          "finalized": 23387863,
+          "peers": 58,
+          "ttpb": 4082,
           "stateSize": 0,
-          "uploadAvgBs": 560914,
-          "downloadAvgBs": 525623,
+          "uploadAvgBs": 585948,
+          "downloadAvgBs": 535361,
+          "stale": false
+        },
+        {
+          "name": "Dox-Assethub-DOT-RPC",
+          "peerId": "12D3KooWCH7XENnBHwZEKiaTzSSC8hSx98ushEtXRd2Jomm54Lzd",
+          "version": "1.25.2-9448fe4f252",
+          "best": 23387880,
+          "finalized": 23387863,
+          "peers": 7,
+          "ttpb": 1722,
+          "stateSize": 735479740,
+          "uploadAvgBs": 8930,
+          "downloadAvgBs": 102166,
           "stale": false
         },
         {
@@ -1007,24 +994,24 @@
           "version": "1.24.3-9d0dc6e8fbb",
           "best": 22161650,
           "finalized": 22161650,
-          "peers": 71,
+          "peers": 73,
           "ttpb": 0,
-          "stateSize": 797957600,
-          "uploadAvgBs": 20814,
-          "downloadAvgBs": 19587,
+          "stateSize": 797957440,
+          "uploadAvgBs": 19943,
+          "downloadAvgBs": 18367,
           "stale": false
         },
         {
           "name": "Mao",
           "peerId": "12D3KooWSTdFk7T6ZYXwWGKyD5aWMfrksc7w5BJgft7mGujM9EwC",
           "version": "1.25.2-9448fe4f252",
-          "best": 13364569,
+          "best": 14673583,
           "finalized": 0,
-          "peers": 40,
-          "ttpb": 62,
-          "stateSize": 817551740,
-          "uploadAvgBs": 20454,
-          "downloadAvgBs": 317646,
+          "peers": 35,
+          "ttpb": 91,
+          "stateSize": 889600450,
+          "uploadAvgBs": 89415,
+          "downloadAvgBs": 7488550,
           "stale": false
         }
       ],
@@ -1096,15 +1083,15 @@
       "version": "1.25.2-9448fe4f252",
       "impl": "polkadot-parachain",
       "name": "ExtraCoin",
-      "best": 2762225,
-      "finalized": 2762219,
+      "best": 2765899,
+      "finalized": 2765892,
       "peers": 29,
-      "ttpb": 5911,
-      "stateSize": 987251460,
-      "uploadAvgBs": 41832,
-      "downloadAvgBs": 25513,
+      "ttpb": 6203,
+      "stateSize": 987580900,
+      "uploadAvgBs": 43809,
+      "downloadAvgBs": 24350,
       "startupTime": 1794743985737,
-      "lastBlockAt": "2026-11-20T12:48:36.730Z",
+      "lastBlockAt": "2026-11-20T18:56:42.836Z",
       "chainStatus": null,
       "invulnerable": null,
       "deposit": null,
@@ -1114,13 +1101,9 @@
       "alertedRecovery": false,
       "alertedMissing": false,
       "statusText": "online",
-      "lastChecked": "2026-11-20T12:48:42.003Z",
+      "lastChecked": "2026-11-20T18:56:45.861Z",
       "lastError": null,
       "history": [
-        {
-          "ts": "2026-10-07T23:05:54.690Z",
-          "best": 2142993
-        },
         {
           "ts": "2026-10-08T05:56:42.515Z",
           "best": 2147049
@@ -1788,32 +1771,36 @@
         {
           "ts": "2026-11-20T12:48:42.003Z",
           "best": 2762225
+        },
+        {
+          "ts": "2026-11-20T18:56:45.861Z",
+          "best": 2765899
         }
       ]
     },
-    "Kusama People:EXTrPK…M3zB": {
-      "peerId": null,
+    "Kusama People:12D3KooWQj…zTcm": {
+      "peerId": "12D3KooWQjTJL6RZmcp4TfjRQ2q9ZQAfxFF9KBMmfvg1wTmNzTcm",
       "addressShort": "EXTrPK…M3zB",
       "address": "EXTrPKwb8ovrnaQMsBsf3nDZu4A4YdHgvNedAiY5DFyM3zB",
       "hasAddress": true,
       "alertsEnabled": true,
-      "matchedBy": null,
-      "label": "ExtraCoin (People)",
+      "matchedBy": "peerId",
+      "label": "ExtraCoin",
       "chain": "Kusama People",
-      "isOnline": false,
-      "stale": null,
-      "version": null,
-      "impl": null,
-      "name": null,
-      "best": null,
-      "finalized": null,
-      "peers": null,
-      "ttpb": null,
-      "stateSize": null,
-      "uploadAvgBs": null,
-      "downloadAvgBs": null,
-      "startupTime": null,
-      "lastBlockAt": null,
+      "isOnline": true,
+      "stale": false,
+      "version": "1.25.0-7a8daa68e18",
+      "impl": "polkadot-parachain",
+      "name": "ExtraCoin",
+      "best": 11642259,
+      "finalized": 11642253,
+      "peers": 15,
+      "ttpb": 6001,
+      "stateSize": 22218752,
+      "uploadAvgBs": 14306,
+      "downloadAvgBs": 11781,
+      "startupTime": 1795197642555,
+      "lastBlockAt": "2026-11-20T18:56:43.260Z",
       "chainStatus": "active",
       "invulnerable": true,
       "deposit": null,
@@ -1823,706 +1810,38 @@
       "alertedRecovery": false,
       "alertedMissing": false,
       "statusText": "online",
-      "lastChecked": "2026-11-20T12:48:42.003Z",
+      "lastChecked": "2026-11-20T18:56:45.861Z",
       "lastError": null,
       "history": [
         {
-          "ts": "2026-10-07T23:05:54.690Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-08T05:56:42.515Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-08T13:23:12.631Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-08T19:54:55.186Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-09T00:20:19.296Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-09T08:58:07.222Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-09T17:02:08.191Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-09T22:38:34.940Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-10T05:44:51.498Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-10T12:26:49.221Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-10T18:33:01.945Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-10T23:32:04.210Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-11T05:40:11.375Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-11T12:43:24.587Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-11T18:52:22.881Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-11T23:41:24.963Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-12T05:50:23.269Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-12T15:16:47.591Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-12T22:58:00.805Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-13T06:45:11.581Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-13T15:57:24.484Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-13T21:15:39.677Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-14T01:12:35.801Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-14T07:33:27.025Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-14T13:41:56.187Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-14T18:35:14.450Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-14T23:13:33.653Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-15T04:30:05.326Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-15T11:23:45.630Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-15T16:51:35.212Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-15T21:21:25.639Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-16T00:22:18.510Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-16T07:07:34.823Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-16T13:16:11.565Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-16T18:02:18.905Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-16T21:01:50.336Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-17T00:24:23.472Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-17T06:56:22.433Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-17T11:26:49.167Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-17T12:12:39.199Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-17T17:06:02.983Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-17T20:34:23.814Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-18T00:02:34.396Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-18T04:23:46.301Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-18T10:58:52.161Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-18T15:51:31.893Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-18T18:39:45.930Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-18T22:27:59.304Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-19T04:33:10.641Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-19T13:01:12.109Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-19T19:50:45.827Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-19T23:37:36.494Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-20T04:43:29.363Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-20T11:29:16.778Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-20T16:54:31.793Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-20T21:36:57.428Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-21T00:37:25.481Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-21T07:33:05.034Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-21T13:45:58.388Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-21T18:38:07.447Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-21T23:16:25.506Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-22T04:34:53.619Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-22T11:44:38.900Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-22T17:08:28.583Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-22T21:32:54.214Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-23T00:38:43.540Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-23T07:26:40.536Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-23T13:24:27.404Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-23T18:19:53.416Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-23T23:06:52.859Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-24T04:29:58.176Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-24T10:53:20.555Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-24T15:54:59.775Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-24T18:49:18.735Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-24T22:29:24.932Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-25T04:34:01.861Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-25T11:18:51.407Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-25T16:06:15.293Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-25T19:00:11.481Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-25T22:33:06.750Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-26T04:37:17.659Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-26T12:52:37.046Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-26T19:56:26.131Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-26T23:50:30.518Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-27T04:55:44.423Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-27T12:05:24.029Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-27T17:59:07.532Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-27T22:10:51.208Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-28T01:20:31.437Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-28T08:23:08.061Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-28T16:38:13.631Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-28T22:34:32.733Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-29T05:40:12.140Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-29T12:52:13.292Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-29T19:37:06.364Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-29T23:59:04.353Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-30T05:39:21.590Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-30T12:46:46.237Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-30T19:15:52.826Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-30T23:42:42.918Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-31T05:27:44.936Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-31T12:16:45.565Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-31T18:32:20.999Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-31T23:22:37.254Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-01T05:54:46.138Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-01T13:15:28.748Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-01T18:56:52.177Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-01T23:34:42.779Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-02T05:54:42.853Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-02T15:39:51.794Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-02T23:30:21.132Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-03T06:36:49.795Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-03T16:12:08.652Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-03T21:48:16.417Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-04T02:14:33.628Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-04T12:04:53.701Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-04T19:45:38.247Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-05T00:56:00.448Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-05T09:26:42.604Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-05T18:02:16.688Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-05T23:38:24.509Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-06T06:29:04.496Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-06T15:56:46.855Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-06T21:31:55.907Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-07T01:53:13.551Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-07T08:44:41.184Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-07T16:23:32.701Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-07T21:48:33.475Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-08T01:23:13.356Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-08T08:58:08.135Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-08T16:42:09.438Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-08T22:02:02.834Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-09T01:43:33.619Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-09T09:42:02.064Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-09T20:43:39.354Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-10T04:08:33.748Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-10T12:34:12.133Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-10T20:51:05.543Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-11T01:56:34.615Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-11T09:18:45.284Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-11T17:55:26.544Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-12T00:36:02.881Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-12T09:46:42.147Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-12T18:14:26.534Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-13T01:04:45.987Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-13T09:30:00.954Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-13T17:43:35.986Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-13T23:32:55.839Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-14T06:10:38.774Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-14T13:29:47.800Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-14T19:07:09.414Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-14T23:54:50.334Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-15T06:17:23.055Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-15T15:40:24.660Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-15T21:03:35.617Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-16T01:56:49.042Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-16T09:32:12.820Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-16T20:22:58.486Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-17T04:30:30.222Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-17T15:57:31.490Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-17T23:32:37.935Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-18T07:15:23.265Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-18T17:15:00.607Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-19T00:19:48.644Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-19T10:14:49.265Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-19T20:31:56.884Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-20T03:04:58.584Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-20T12:48:42.003Z",
-          "best": null
+          "ts": "2026-11-20T18:56:45.861Z",
+          "best": 11642259
         }
       ]
     },
-    "Polkadot Asset Hub:12EXTr…HQUF": {
-      "peerId": null,
+    "Polkadot Asset Hub:12D3KooWSR…LbMB": {
+      "peerId": "12D3KooWSRW6rGbri55GCsAHNdVkVXHz8PEzxnksnGTqhCVALbMB",
       "addressShort": "12EXTr…HQUF",
       "address": "12EXTrrfo9LTbK7ToB5XekXJysjoWCg3SyqgAMaFpXyXHQUF",
       "hasAddress": true,
       "alertsEnabled": true,
-      "matchedBy": null,
-      "label": "ExtraCoin (AssetHub)",
+      "matchedBy": "peerId",
+      "label": "ExtraCoin",
       "chain": "Polkadot Asset Hub",
-      "isOnline": false,
-      "stale": null,
-      "version": null,
-      "impl": null,
-      "name": null,
-      "best": null,
-      "finalized": null,
-      "peers": null,
-      "ttpb": null,
-      "stateSize": null,
-      "uploadAvgBs": null,
-      "downloadAvgBs": null,
-      "startupTime": null,
-      "lastBlockAt": null,
+      "isOnline": true,
+      "stale": false,
+      "version": "1.25.2-9448fe4f252",
+      "impl": "polkadot-parachain",
+      "name": "ExtraCoin",
+      "best": 23387881,
+      "finalized": 23387863,
+      "peers": 29,
+      "ttpb": 4112,
+      "stateSize": 772492000,
+      "uploadAvgBs": 299296,
+      "downloadAvgBs": 145499,
+      "startupTime": 1794743986468,
+      "lastBlockAt": "2026-11-20T18:56:44.722Z",
       "chainStatus": "active",
       "invulnerable": true,
       "deposit": null,
@@ -2532,680 +1851,12 @@
       "alertedRecovery": false,
       "alertedMissing": false,
       "statusText": "online",
-      "lastChecked": "2026-11-20T12:48:42.003Z",
+      "lastChecked": "2026-11-20T18:56:45.861Z",
       "lastError": null,
       "history": [
         {
-          "ts": "2026-10-07T23:05:54.690Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-08T05:56:42.515Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-08T13:23:12.631Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-08T19:54:55.186Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-09T00:20:19.296Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-09T08:58:07.222Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-09T17:02:08.191Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-09T22:38:34.940Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-10T05:44:51.498Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-10T12:26:49.221Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-10T18:33:01.945Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-10T23:32:04.210Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-11T05:40:11.375Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-11T12:43:24.587Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-11T18:52:22.881Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-11T23:41:24.963Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-12T05:50:23.269Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-12T15:16:47.591Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-12T22:58:00.805Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-13T06:45:11.581Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-13T15:57:24.484Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-13T21:15:39.677Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-14T01:12:35.801Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-14T07:33:27.025Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-14T13:41:56.187Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-14T18:35:14.450Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-14T23:13:33.653Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-15T04:30:05.326Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-15T11:23:45.630Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-15T16:51:35.212Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-15T21:21:25.639Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-16T00:22:18.510Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-16T07:07:34.823Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-16T13:16:11.565Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-16T18:02:18.905Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-16T21:01:50.336Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-17T00:24:23.472Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-17T06:56:22.433Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-17T11:26:49.167Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-17T12:12:39.199Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-17T17:06:02.983Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-17T20:34:23.814Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-18T00:02:34.396Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-18T04:23:46.301Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-18T10:58:52.161Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-18T15:51:31.893Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-18T18:39:45.930Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-18T22:27:59.304Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-19T04:33:10.641Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-19T13:01:12.109Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-19T19:50:45.827Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-19T23:37:36.494Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-20T04:43:29.363Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-20T11:29:16.778Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-20T16:54:31.793Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-20T21:36:57.428Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-21T00:37:25.481Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-21T07:33:05.034Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-21T13:45:58.388Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-21T18:38:07.447Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-21T23:16:25.506Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-22T04:34:53.619Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-22T11:44:38.900Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-22T17:08:28.583Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-22T21:32:54.214Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-23T00:38:43.540Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-23T07:26:40.536Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-23T13:24:27.404Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-23T18:19:53.416Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-23T23:06:52.859Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-24T04:29:58.176Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-24T10:53:20.555Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-24T15:54:59.775Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-24T18:49:18.735Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-24T22:29:24.932Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-25T04:34:01.861Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-25T11:18:51.407Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-25T16:06:15.293Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-25T19:00:11.481Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-25T22:33:06.750Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-26T04:37:17.659Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-26T12:52:37.046Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-26T19:56:26.131Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-26T23:50:30.518Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-27T04:55:44.423Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-27T12:05:24.029Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-27T17:59:07.532Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-27T22:10:51.208Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-28T01:20:31.437Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-28T08:23:08.061Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-28T16:38:13.631Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-28T22:34:32.733Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-29T05:40:12.140Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-29T12:52:13.292Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-29T19:37:06.364Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-29T23:59:04.353Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-30T05:39:21.590Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-30T12:46:46.237Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-30T19:15:52.826Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-30T23:42:42.918Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-31T05:27:44.936Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-31T12:16:45.565Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-31T18:32:20.999Z",
-          "best": null
-        },
-        {
-          "ts": "2026-10-31T23:22:37.254Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-01T05:54:46.138Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-01T13:15:28.748Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-01T18:56:52.177Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-01T23:34:42.779Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-02T05:54:42.853Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-02T15:39:51.794Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-02T23:30:21.132Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-03T06:36:49.795Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-03T16:12:08.652Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-03T21:48:16.417Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-04T02:14:33.628Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-04T12:04:53.701Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-04T19:45:38.247Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-05T00:56:00.448Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-05T09:26:42.604Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-05T18:02:16.688Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-05T23:38:24.509Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-06T06:29:04.496Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-06T15:56:46.855Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-06T21:31:55.907Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-07T01:53:13.551Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-07T08:44:41.184Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-07T16:23:32.701Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-07T21:48:33.475Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-08T01:23:13.356Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-08T08:58:08.135Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-08T16:42:09.438Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-08T22:02:02.834Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-09T01:43:33.619Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-09T09:42:02.064Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-09T20:43:39.354Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-10T04:08:33.748Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-10T12:34:12.133Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-10T20:51:05.543Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-11T01:56:34.615Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-11T09:18:45.284Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-11T17:55:26.544Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-12T00:36:02.881Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-12T09:46:42.147Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-12T18:14:26.534Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-13T01:04:45.987Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-13T09:30:00.954Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-13T17:43:35.986Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-13T23:32:55.839Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-14T06:10:38.774Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-14T13:29:47.800Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-14T19:07:09.414Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-14T23:54:50.334Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-15T06:17:23.055Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-15T15:40:24.660Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-15T21:03:35.617Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-16T01:56:49.042Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-16T09:32:12.820Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-16T20:22:58.486Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-17T04:30:30.222Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-17T15:57:31.490Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-17T23:32:37.935Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-18T07:15:23.265Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-18T17:15:00.607Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-19T00:19:48.644Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-19T10:14:49.265Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-19T20:31:56.884Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-20T03:04:58.584Z",
-          "best": null
-        },
-        {
-          "ts": "2026-11-20T12:48:42.003Z",
-          "best": null
+          "ts": "2026-11-20T18:56:45.861Z",
+          "best": 23387881
         }
       ]
     }
