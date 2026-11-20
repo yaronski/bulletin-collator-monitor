@@ -59,6 +59,90 @@ const writeJSON = (p, d) => writeFileSync(p, JSON.stringify(d, null, 2) + '\n');
 const shortPeer = (id) => id.slice(0, 10) + '…' + id.slice(-4);
 const shortAddr = (a) => a.slice(0, 6) + '…' + a.slice(-4);
 
+// ── Block authorship (AURA system parachains) ──────────────────────────────
+// Aura.Authorities holds AuthorIds (session keys, not accounts). Session.QueuedKeys
+// holds (AccountId, session-keys) pairs; we match each authority id by VALUE inside
+// the key blob (no struct-layout assumptions). Block author = authority[slot % n],
+// slot from the header's AURA pre-runtime digest. Relay chains: skipped.
+function parseCompactPrefix(b) {
+  const first = b[0];
+  if ((first & 3) === 0) return { n: first >> 2, off: 1 };
+  if ((first & 3) === 1) return { n: ((first >> 2) | (b[1] << 6)) & 0xffff, off: 2 };
+  if ((first & 3) === 2) return { n: ((first >> 2) | (b[1] << 6) | (b[2] << 14) | (b[3] << 22)) >>> 0, off: 4 };
+  return { n: Number(rd64(b, 1) >> 4n), off: 1 + (first >> 2) };
+}
+
+async function computeAuthorship(url, raws, budgetMs = 90_000) {
+  const t0 = Date.now();
+  const head = await rpc(url, 'chain_getBlockHash', [null]);
+  const auraHex = await rpc(url, 'state_getStorage', [KEY_AURA_AUTHORITIES, head]);
+  const queuedHex = await rpc(url, 'state_getStorage', [KEY_QUEUED_KEYS, head]);
+  if (!auraHex || !queuedHex) return { error: 'no Aura.Authorities or Session.QueuedKeys (relay or unsupported runtime)' };
+  const ab = Buffer.from(auraHex.slice(2), 'hex');
+  const { n, off } = parseCompactPrefix(ab);
+  if (!n || ab.length < off + n * 32) return { error: 'unexpected Aura.Authorities layout' };
+  const authorityIds = [];
+  for (let i = 0; i < n; i++) authorityIds.push(ab.slice(off + i * 32, off + (i + 1) * 32).toString('hex'));
+  const idSet = new Set(authorityIds);
+
+  const qb = Buffer.from(queuedHex.slice(2), 'hex');
+  const q = parseCompactPrefix(qb);
+  const entryLen = Math.floor((qb.length - q.off) / q.n);
+  if (!q.n || entryLen < 64) return { error: 'unexpected Session.QueuedKeys layout' };
+  const authToAccount = new Map();
+  for (let e = 0; e < q.n; e++) {
+    const entry = qb.slice(q.off + e * entryLen, q.off + (e + 1) * entryLen);
+    const account = entry.slice(0, 32).toString('hex');
+    const rest = entry.slice(32);
+    for (let o = 0; o + 32 <= rest.length; o += 32) {
+      const cand = rest.slice(o, o + 32).toString('hex');
+      if (idSet.has(cand) && !authToAccount.has(cand)) authToAccount.set(cand, account);
+    }
+  }
+
+  const headHdr = await rpc(url, 'chain_getHeader', [head]);
+  const headNumber = parseInt(headHdr.number, 16);
+  let W = Math.min(240, 6 * n);
+  const overBudget = () => Date.now() - t0 > budgetMs;
+
+  // pass 1: block hashes (number -> hash), small worker pool, time-budgeted
+  const hashes = [];
+  let cursor = 0;
+  await Promise.all(Array.from({ length: 6 }, async () => {
+    while (cursor < W) {
+      if (overBudget()) return;
+      const my = cursor++;
+      hashes[my] = await rpc(url, 'chain_getBlockHash', [headNumber - my]);
+    }
+  }));
+  while (W > 0 && hashes[W - 1] === undefined) W--; // trim to contiguous fetched range
+
+  // pass 2: headers, slot decode, attribute
+  const headers = [];
+  cursor = 0;
+  await Promise.all(Array.from({ length: 6 }, async () => {
+    while (cursor < W) {
+      if (overBudget()) return;
+      const my = cursor++;
+      headers[my] = await rpc(url, 'chain_getHeader', [hashes[my]]);
+    }
+  }));
+
+  const per = {};
+  const norm = {}; // bare-hex lookup (cfg._raw may be 0x-prefixed)
+  for (const raw of raws) { per[raw] = { authored: 0, lastBlock: null }; norm[String(raw).replace(/^0x/, '')] = per[raw]; }
+  for (let k = 0; k < W; k++) {
+    const hdr = headers[k];
+    const pre = hdr?.digest?.logs?.find((d) => typeof d === 'string' && d.startsWith('0x0661757261'));
+    if (!pre) continue;
+    const slot = BigInt('0x' + Buffer.from(pre.slice(14, 30), 'hex').reverse().toString('hex'));
+    const acc = authToAccount.get(authorityIds[Number(slot % BigInt(n))]);
+    const rec = acc ? norm[acc] : null;
+    if (rec) { rec.authored++; if (rec.lastBlock === null) rec.lastBlock = headNumber - k; }
+  }
+  return { headNumber, window: W, set: n, per };
+}
+
 // ── XXH64 / twox128 storage keys ───────────────────────────────────────────
 const P1 = 0x9e3779b185ebca87n, P2 = 0xc2b2ae3d27d4eb4fn, P3 = 0x165667b19e3779f9n;
 const P4 = 0x85ebca77c2b2ae63n, P5 = 0x27d4eb2f165667c5n;
@@ -103,6 +187,8 @@ const KEY_CANDIDATELIST = storageKey('CollatorSelection', 'CandidateList');
 // fallback for older runtimes still using the 'Candidates' item
 const KEY_CANDIDATES = storageKey('CollatorSelection', 'Candidates');
 const KEY_INVULN = storageKey('CollatorSelection', 'Invulnerables');
+const KEY_AURA_AUTHORITIES = storageKey('Aura', 'Authorities');
+const KEY_QUEUED_KEYS = storageKey('Session', 'QueuedKeys');
 
 // ── SS58 ────────────────────────────────────────────────────────────────────
 const B58 = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
@@ -416,6 +502,31 @@ async function main() {
     }
   }
 
+  // ── Block authorship for AURA parachains with watched addresses ──────────
+  const authorshipChains = new Map(); // chain label -> computeAuthorship result
+  for (const label of new Set(addressWatch.filter((n) => n._raw && !isRelay(String(n.chain).trim())).map((n) => String(n.chain).trim()))) {
+    const r = rpcChains.get(label);
+    if (!r || r.error || !r.url) continue;
+    const raws = addressWatch.filter((n) => String(n.chain).trim() === label && n._raw).map((n) => n._raw);
+    try {
+      console.log(`\nAuthorship: ${label}`);
+      const a = await computeAuthorship(r.url, raws);
+      if (a.error) {
+        console.log(`  – skipped: ${a.error}`);
+      } else {
+        authorshipChains.set(label, a);
+        const flavor = relayOf(label) === 'kusama' ? 2 : 0;
+        for (const [raw, rec] of Object.entries(a.per)) {
+          const who = ss58Encode(raw, flavor);
+          if (rec.lastBlock !== null) console.log(`  ${who}: ${rec.authored}/${a.window} blocks, last own #${rec.lastBlock} (${a.headNumber - rec.lastBlock} back)`);
+          else console.log(`  ${who}: 0/${a.window} blocks authored (offline or not scheduled)`);
+        }
+      }
+    } catch (e) {
+      console.log(`  – failed: ${String(e.message || e).slice(0, 80)}`);
+    }
+  }
+
   // ── Evaluate ──────────────────────────────────────────────────────────────
   const statusPath = join(ROOT, 'status.json');
   const prev = existsSync(statusPath) ? readJSON(statusPath) : { nodes: {} };
@@ -517,6 +628,7 @@ async function main() {
 
     // on-chain part
     let chainStatus = null, deposit = null, invulnerable = false, rpcErr = null;
+    let authorship = null;
     if (cfg._raw) {
       const r = chainLabel ? rpcChains.get(chainLabel) : null;
       if (!r) {
@@ -531,6 +643,11 @@ async function main() {
         if (inVal) chainStatus = 'active';
         else if (cand || invulnerable) chainStatus = 'standby';
         else chainStatus = r.relay ? 'inactive' : 'missing';
+      }
+      const a = chainLabel ? authorshipChains.get(chainLabel) : null;
+      if (a && cfg._raw in a.per) {
+        const rec = a.per[cfg._raw];
+        authorship = { window: a.window, set: a.set, headBlock: a.headNumber, authored: rec.authored, lastAuthoredBlock: rec.lastBlock };
       }
     }
 
@@ -567,6 +684,7 @@ async function main() {
     if (telemetryOffline && !cfg._raw) console.log(`    Offline for ${consecutiveOffline}/${threshold} consecutive checks.`);
     if (rpcErr) console.log(`    ✗ on-chain: ${rpcErr}`);
     if (chainStatus) console.log(`    on-chain: ${chainStatus}${invulnerable ? ' (invulnerable)' : ''}${deposit != null ? ` deposit=${deposit}` : ''}`);
+    if (authorship) console.log(`    authorship: ${authorship.authored}/${authorship.window} blocks in window${authorship.lastAuthoredBlock !== null ? `, last own #${authorship.lastAuthoredBlock} (${authorship.headBlock - authorship.lastAuthoredBlock} back)` : ' (none attributed)'}`);
 
     if (alertsOn && triggerOfflineAlert) {
       await sendTelegram(
@@ -619,6 +737,7 @@ async function main() {
       chainStatus,
       invulnerable: invulnerable || null,
       deposit: deposit != null ? deposit.toString() : null,
+      authorship,
       consecutiveOffline,
       consecutiveMissing,
       alertedOffline: alertsOn && telemetryOffline ? (triggerOfflineAlert || wasAlertedOffline) : false,

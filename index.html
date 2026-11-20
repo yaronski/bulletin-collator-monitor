@@ -335,7 +335,8 @@ var TOOLTIPS = {
   stateSize: 'Size of the node\'s state cache (pruned) in memory.',
   upload: 'Average network upload while the check window ran.',
   download: 'Average network download while the check window ran.',
-  spark: 'One bar per check interval: how many blocks the node produced/imported between two consecutive checks (~2 h apart). Green = normal progress (similar heights = steady production), amber = zero blocks in that window (node stuck or offline during it), red = best block went DOWN (node restarted on a shorter chain). Hover a bar for exact numbers.'
+  spark: 'One bar per check interval: how many blocks the node produced/imported between two consecutive checks (~2 h apart). Green = normal progress (similar heights = steady production), amber = zero blocks in that window (node stuck or offline during it), red = best block went DOWN (node restarted on a shorter chain). Hover a bar for exact numbers.',
+  authorship: 'Blocks this collator actually AUTHORED (not just imported), computed from each recent block header: the AURA slot in the digest selects the author from the on-chain authority list, resolved to accounts via session keys. Window = the most recent blocks scanned this check. Zero while the collator is offline or not scheduled.'
 };
 
 function fmt(iso) {
@@ -547,6 +548,13 @@ function renderCards(nodes, chains) {
     meta += metaItem('Peers', 'peers', col.peers != null ? col.peers : '\u2013', col.peers != null && col.peers < 5 ? 'warn' : '');
     if (col.chainStatus) meta += metaItem('Collator set', null, escapeHtml(col.chainStatus) + (col.invulnerable ? ' \u00b7 invuln' : ''), (col.chainStatus === 'missing' || col.chainStatus === 'inactive') ? 'highlight' : (col.chainStatus === 'standby' ? 'muted' : ''));
     if (col.deposit) meta += metaItem('Bond', null, escapeHtml(fmtPlanck(col.deposit)));
+    if (col.authorship && col.authorship.window > 0) {
+      var ago = col.authorship.lastAuthoredBlock !== null
+        ? '#' + col.authorship.lastAuthoredBlock.toLocaleString('en-US') + ' \u00b7 ' + Math.max(0, col.authorship.headBlock - col.authorship.lastAuthoredBlock) + ' blocks back'
+        : 'none in window';
+      meta += metaItem('Blocks authored', 'authorship', escapeHtml(String(col.authorship.authored)) + ' / ' + col.authorship.window, col.authorship.authored > 0 ? '' : 'muted');
+      meta += metaItem('Last own block', 'authorship', escapeHtml(ago), col.authorship.lastAuthoredBlock !== null ? '' : 'muted');
+    }
     if (col.ttpb != null) meta += metaItem('Block time', 'ttpb', (col.ttpb / 1000).toFixed(1) + 's', col.ttpb > 10000 ? 'warn' : '');
     if (col.uploadAvgBs != null) meta += metaItem('Upload', 'upload', fmtRate(col.uploadAvgBs));
     if (col.downloadAvgBs != null) meta += metaItem('Download', 'download', fmtRate(col.downloadAvgBs));
